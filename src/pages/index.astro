@@ -518,7 +518,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				<div class="container">
 					<div class="section-header">
 						<h3 class="section-headline">
-							🎥 Watch the Demo (3–5 minutes)
+							🎥 Watch the Demo (1 minute and 15 seconds)
 						</h3>
 						<p class="section-subtitle">
 							See exactly how DUAHTOR works for students, parents, and teachers — in real use cases.
@@ -534,13 +534,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 									</div>
 									<div class="video-overlay">
 										<div class="video-title">DUAHTOR Platform Demo</div>
-										<div class="video-duration">3:42</div>
+										<div class="video-duration">1:15</div>
 									</div>
 								</div>
 							</div>
 						</div>
 						
-						<div class="demo-cta">
+						<div class="demo-cta" style="display: flex; justify-content: center; margin-top: 2rem;">
 							<button class="btn btn-primary btn-demo" id="play-demo-btn">
 								Play Full Demo
 							</button>
@@ -818,80 +818,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</div>
 			</div>
 
-			<!-- Founding Supporter Perks Section -->
-			<section id="waitlist" class="founding-supporter-section" aria-labelledby="founding-supporter-title">
-				<div class="container">
-					<div class="section-header text-center">
-						<h2 id="founding-supporter-title" class="founder-title">
-							🎉 Become a Founding Supporter – Just $29
-						</h2>
-						<p class="founder-subtitle">
-							Limited to first <strong class="highlight-number">500</strong> supporters.
-						</p>
-					</div>
-					
-					<div class="supporter-offer-card">
-						<div class="offer-content">
-							<h3 class="offer-title">Includes:</h3>
-							<div class="benefits-list-simple">
-								<div class="benefit-item-simple">
-									<span class="benefit-check">✅</span>
-									<span class="benefit-text">3 Months Premium</span>
-								</div>
-								<div class="benefit-item-simple">
-									<span class="benefit-check">👕</span>
-									<span class="benefit-text">Free Branded T-Shirt</span>
-								</div>
-								<div class="benefit-item-simple">
-									<span class="benefit-check">📶</span>
-									<span class="benefit-text">Data-included access</span>
-								</div>
-								<div class="benefit-item-simple">
-									<span class="benefit-check">🎖</span>
-									<span class="benefit-text">Founding Badge in your profile</span>
-								</div>
-							</div>
-						</div>
-						
-						<div class="payment-section">
-							<div class="payment-options">
-								<h4 class="payment-title">Choose Your Payment Method:</h4>
-								<div class="payment-methods">
-									<button class="payment-method" data-method="mtn">
-										<span class="payment-icon">📱</span>
-										<span class="payment-name">MTN Money</span>
-									</button>
-									<button class="payment-method" data-method="orange">
-										<span class="payment-icon">🧡</span>
-										<span class="payment-name">Orange Money</span>
-									</button>
-									<button class="payment-method" data-method="card">
-										<span class="payment-icon">💳</span>
-										<span class="payment-name">Card Payment</span>
-									</button>
-								</div>
-							</div>
-							
-							<div class="waitlist-option">
-								<label class="checkbox-container">
-									<input type="checkbox" id="join-waitlist-checkbox" checked>
-									<span class="checkmark-custom">☑</span>
-									<span class="checkbox-label">Yes, I also want to join the waitlist</span>
-								</label>
-							</div>
-							
-							<div class="supporter-cta">
-								<button class="btn-supporter" id="become-supporter-btn">
-									Become a Supporter
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
 			<!-- Join Early Access Section -->
-			<section class="early-access-section" aria-labelledby="early-access-title">
+			<section id="waitlist" class="early-access-section" aria-labelledby="early-access-title">
 				<div class="container">
 					<div class="section-header">
 						<h2 id="early-access-title" class="section-title">
@@ -983,6 +911,78 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 								</button>
 							</div>
 						</form>
+					</div>
+				</div>
+			</section>
+
+			<!-- Founding Supporter Perks Section -->
+			<section class="founding-supporter-section" aria-labelledby="founding-supporter-title">
+				<div class="container">
+					<div class="section-header text-center">
+						<h2 id="founding-supporter-title" class="founder-title">
+							🎉 Become a Founding Supporter – Just $29
+						</h2>
+						<p class="founder-subtitle">
+							Limited to first <strong class="highlight-number">500</strong> supporters.
+						</p>
+					</div>
+					
+					<div class="supporter-offer-card">
+						<div class="offer-content">
+							<h3 class="offer-title">Includes:</h3>
+							<div class="benefits-list-simple">
+								<div class="benefit-item-simple">
+									<span class="benefit-check">✅</span>
+									<span class="benefit-text">3 Months Premium</span>
+								</div>
+								<div class="benefit-item-simple">
+									<span class="benefit-check">👕</span>
+									<span class="benefit-text">Free Branded T-Shirt</span>
+								</div>
+								<div class="benefit-item-simple">
+									<span class="benefit-check">📶</span>
+									<span class="benefit-text">Data-included access</span>
+								</div>
+								<div class="benefit-item-simple">
+									<span class="benefit-check">🎖</span>
+									<span class="benefit-text">Founding Badge in your profile</span>
+								</div>
+							</div>
+						</div>
+						
+						<div class="payment-section">
+							<div class="payment-options">
+								<h4 class="payment-title">Choose Your Payment Method:</h4>
+								<div class="payment-methods">
+									<button class="payment-method" data-method="mtn">
+										<span class="payment-icon">📱</span>
+										<span class="payment-name">MTN Money</span>
+									</button>
+									<button class="payment-method" data-method="orange">
+										<span class="payment-icon">🧡</span>
+										<span class="payment-name">Orange Money</span>
+									</button>
+									<button class="payment-method" data-method="card">
+										<span class="payment-icon">💳</span>
+										<span class="payment-name">Card Payment</span>
+									</button>
+								</div>
+							</div>
+							
+							<div class="waitlist-option">
+								<label class="checkbox-container">
+									<input type="checkbox" id="join-waitlist-checkbox" checked>
+									<span class="checkmark-custom">☑</span>
+									<span class="checkbox-label">Yes, I also want to join the waitlist</span>
+								</label>
+							</div>
+							
+							<div class="supporter-cta">
+								<button class="btn-supporter" id="become-supporter-btn">
+									Become a Supporter
+								</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
