@@ -9,9 +9,12 @@ import { SITE_TITLE } from '../consts';
 			<!-- Logo -->
 			<div class="flex-shrink-0">
 				<a href="/" class="logo-link">
-					<span class="font-heading font-bold text-2xl lg:text-3xl">
-						<span class="text-primary">DUAH</span><span class="text-accent">TOR</span>
-					</span>
+					<img 
+						src="/images/duahtor-logo_balck-and-white_.png" 
+						alt="DUAHTOR - AI Learning Companion" 
+						class="logo-image"
+						loading="eager"
+					/>
 				</a>
 			</div>
 
@@ -99,10 +102,20 @@ import { SITE_TITLE } from '../consts';
 	.logo-link {
 		text-decoration: none;
 		transition: all 0.3s ease;
+		display: flex;
+		align-items: center;
 	}
 
 	.logo-link:hover {
 		transform: scale(1.05);
+	}
+	
+	.logo-image {
+		height: 4rem; /* 48px for mobile (1.5x larger) */
+		width: auto;
+		filter: invert(1); /* Inverts black/white to make logo black on transparent */
+		transition: all 0.3s ease;
+		mix-blend-mode: multiply;
 	}
 
 	/* Navigation Links - Updated for accessible colors */
@@ -256,6 +269,10 @@ import { SITE_TITLE } from '../consts';
 		.md\:hidden { display: none !important; }
 		.text-2xl { font-size: 1.5rem; }
 		
+		.logo-image {
+			height: 3.375rem; /* 54px for tablet (1.5x larger) */
+		}
+		
 		/* Ensure desktop navigation is visible */
 		nav .hidden.md\:block,
 		nav .hidden.md\:flex {
@@ -281,6 +298,10 @@ import { SITE_TITLE } from '../consts';
 		.lg\:h-20 { height: 5rem; }
 		.lg\:text-3xl { font-size: 1.875rem; }
 		.lg\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+		
+		.logo-image {
+			height: 3.75rem; /* 60px for desktop (1.5x larger) */
+		}
 	}
 
 	/* Utility classes for Tailwind-like functionality */

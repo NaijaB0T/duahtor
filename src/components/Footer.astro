@@ -9,16 +9,34 @@ const today = new Date();
 			<div class="company-section">
 				<div class="company-brand">
 					<div class="logo-container">
-						<span class="logo-text">
-							<span class="logo-primary">DUAH</span><span class="logo-accent">TOR</span>
-						</span>
+						<img 
+							src="/images/duahtor-logo_balck-and-white.png" 
+							alt="DUAHTOR - AI Learning Companion" 
+							class="footer-logo-image"
+							loading="lazy"
+						/>
 					</div>
 				</div>
 				<p class="company-description">
 					Empowering Liberian students with AI-powered educational support. 
 					Making quality education accessible to every student, everywhere.
 				</p>
-				
+			</div>
+
+			<!-- Quick Links -->
+			<div class="footer-section">
+				<h4 class="section-title">Links</h4>
+				<ul class="footer-links">
+					<li><a href="/terms" class="footer-link">Terms</a></li>
+					<li><a href="/privacy" class="footer-link">Privacy</a></li>
+					<li><a href="/blog" class="footer-link">Blog</a></li>
+					<li><a href="#contact" class="footer-link">Contact</a></li>
+				</ul>
+			</div>
+
+			<!-- Contact & Social Section -->
+			<div class="footer-section">
+				<h4 class="section-title">Get in Touch</h4>
 				<div class="contact-info">
 					<div class="contact-item">
 						<span class="contact-icon">📬</span>
@@ -47,17 +65,6 @@ const today = new Date();
 						</svg>
 					</a>
 				</div>
-			</div>
-
-			<!-- Quick Links -->
-			<div class="footer-section">
-				<h4 class="section-title">Links</h4>
-				<ul class="footer-links">
-					<li><a href="/terms" class="footer-link">Terms</a></li>
-					<li><a href="/privacy" class="footer-link">Privacy</a></li>
-					<li><a href="/blog" class="footer-link">Blog</a></li>
-					<li><a href="#contact" class="footer-link">Contact</a></li>
-				</ul>
 			</div>
 		</div>
 
@@ -107,18 +114,17 @@ const today = new Date();
 		margin-bottom: 1rem;
 	}
 
-	.logo-text {
-		font-family: 'Poppins', sans-serif;
-		font-size: var(--text-2xl);
-		font-weight: 700;
+	.footer-logo-image {
+		height: 6.5rem; /* 40px - good size for footer */
+		width: auto;
+		/* No filter inversion - keep natural white logo on dark background */
+		transition: all 0.3s ease;
+		mix-blend-mode: screen;
 	}
-
-	.logo-primary {
-		color: var(--color-prussian-blue-light);
-	}
-
-	.logo-accent {
-		color: var(--color-mango-tango);
+	
+	.footer-logo-image:hover {
+		opacity: 0.8;
+		transform: scale(1.05);
 	}
 
 	.company-description {
@@ -128,11 +134,33 @@ const today = new Date();
 		max-width: 400px;
 	}
 
+	/* Contact Information */
+	.contact-info {
+		margin-bottom: 1.5rem;
+	}
+	
+	.contact-item {
+		display: flex;
+		align-items: center;
+		margin-bottom: 0.75rem;
+		color: rgba(255, 255, 255, 0.8);
+	}
+	
+	.contact-icon {
+		margin-right: 0.75rem;
+		font-size: 1.125rem;
+	}
+	
+	.contact-text {
+		font-size: 0.875rem;
+		line-height: 1.4;
+	}
+
 	/* Social Links */
 	.social-links {
 		display: flex;
 		gap: 1rem;
-		margin-top: 1.5rem;
+		margin-top: 1rem;
 	}
 
 	.social-link {
@@ -377,8 +405,8 @@ const today = new Date();
 			text-align: center;
 		}
 
-		.logo-text {
-			font-size: var(--text-xl);
+		.footer-logo-image {
+			height: 2rem; /* 32px - smaller for mobile */
 		}
 
 		.company-description {
