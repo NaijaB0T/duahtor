@@ -262,9 +262,8 @@ hr {
 }
 
 .btn-secondary {
-  background-color: transparent;
-  color: var(--color-maize-yellow);
-  border: 2px solid var(--color-maize-yellow);
+  background-color: var(--color-pure-white);
+  color: var(--color-prussian-blue-dark);
   box-shadow: var(--shadow-md);
 }
 
