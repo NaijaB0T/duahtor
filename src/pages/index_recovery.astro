@@ -1,0 +1,265 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="DUAHTOR - Liberia's First AI Learning Companion" description="Join thousands of Liberian students transforming their learning experience with AI-powered tutoring. Get instant homework help, personalized lessons, and 24/7 academic support." />
+	</head>
+	<body>
+		<!-- Skip to main content link for keyboard navigation -->
+		<a href="#main-content" class="skip-link">Skip to main content</a>
+		<Header />
+		
+		<!-- Main Content -->
+		<main id="main-content">
+			<!-- Hero Section -->
+			<section class="hero-section" aria-labelledby="hero-title">
+				<div class="hero-background">
+					<div class="container">
+						<div class="hero-grid">
+							<!-- Left Column - The Narrative -->
+							<div class="hero-content">
+								<div class="hero-text-container">
+									<h1 id="hero-title" class="hero-title">
+										Liberia, Meet Your First 
+										<span class="text-gradient">AI Learning Companion</span>
+									</h1>
+									
+									<div class="pain-points">
+										<div class="pain-point fade-in-up" style="animation-delay: 0.2s">
+											<div class="pain-icon" aria-hidden="true">📚</div>
+											<span class="pain-text">Struggling with homework?</span>
+										</div>
+										<div class="pain-point fade-in-up" style="animation-delay: 0.4s">
+											<div class="pain-icon" aria-hidden="true">🎯</div>
+											<span class="pain-text">Need personalized tutoring?</span>
+										</div>
+										<div class="pain-point fade-in-up" style="animation-delay: 0.6s">
+											<div class="pain-icon" aria-hidden="true">⏰</div>
+											<span class="pain-text">Want 24/7 academic support?</span>
+										</div>
+										<div class="pain-point fade-in-up" style="animation-delay: 0.8s">
+											<div class="pain-icon" aria-hidden="true">💡</div>
+											<span class="pain-text">Ready to excel in your studies?</span>
+										</div>
+									</div>
+									
+									<div class="cta-buttons">
+										<a href="#waitlist" class="btn btn-primary btn-hero">
+											Join the Early Access Waitlist
+										</a>
+										<a href="#demo" class="btn btn-secondary btn-hero">
+											Watch How It Works
+										</a>
+									</div>
+									
+									<div class="social-proof">
+										<p class="social-proof-text">
+											<strong>500+</strong> students already on the waitlist
+										</p>
+									</div>
+								</div>
+							</div>
+							
+							<!-- Right Column - The Transformation -->
+							<div class="hero-visual">
+								<div class="transformation-card glass-effect">
+									<div class="transformation-grid">
+										<div class="before-section">
+											<div class="student-avatar student-before">
+												<div class="avatar-placeholder">😟</div>
+											</div>
+											<p class="transformation-label before-label">Before DUAHTOR</p>
+											<ul class="transformation-list">
+												<li>Confused by homework</li>
+												<li>Limited study resources</li>
+												<li>No immediate help</li>
+											</ul>
+										</div>
+										<div class="transformation-arrow">
+											<span class="arrow-icon">→</span>
+										</div>
+										<div class="after-section">
+											<div class="student-avatar student-after">
+												<div class="avatar-placeholder">😊</div>
+											</div>
+											<p class="transformation-label after-label">After DUAHTOR</p>
+											<ul class="transformation-list success-list">
+												<li>Confident & thriving</li>
+												<li>Personalized learning</li>
+												<li>Instant AI assistance</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Who DUAHTOR Helps Section -->
+			<section class="who-helps-section" aria-labelledby="who-helps-title">
+				<div class="container">
+					<div class="section-header">
+						<h2 id="who-helps-title" class="section-title">
+							Who DUAHTOR Helps
+						</h2>
+						<p class="section-subtitle">
+							Supporting every member of Liberia's educational ecosystem
+						</p>
+					</div>
+					
+					<div class="target-groups-grid">
+						<!-- Students Card -->
+						<div class="target-group-card">
+							<div class="card-content">
+								<div class="icon-container">
+									<div class="icon-wrapper">
+										<span class="target-icon">🎓</span>
+									</div>
+								</div>
+								<h3 class="card-title">Students</h3>
+								<ul class="benefits-list">
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">24/7 homework assistance</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">Personalized learning paths</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">Instant doubt clarification</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">Progress tracking & insights</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">Exam preparation support</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Parents Card -->
+						<div class="target-group-card">
+							<div class="card-content">
+								<div class="icon-container">
+									<div class="icon-wrapper">
+										<span class="target-icon">👨‍👩‍👧‍👦</span>
+									</div>
+								</div>
+								<h3 class="card-title">Parents</h3>
+								<ul class="benefits-list">
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">Monitor child's progress</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">Reduce homework stress</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">Save on tutoring costs</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">Weekly progress reports</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">Safe learning environment</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Teachers Card -->
+						<div class="target-group-card">
+							<div class="card-content">
+								<div class="icon-container">
+									<div class="icon-wrapper">
+										<span class="target-icon">👩‍🏫</span>
+									</div>
+								</div>
+								<h3 class="card-title">Teachers</h3>
+								<ul class="benefits-list">
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">Supplement classroom teaching</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">Identify learning gaps</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">Enhanced student engagement</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">Curriculum-aligned content</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">Student performance analytics</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Schools Card -->
+						<div class="target-group-card">
+							<div class="card-content">
+								<div class="icon-container">
+									<div class="icon-wrapper">
+										<span class="target-icon">🏫</span>
+									</div>
+								</div>
+								<h3 class="card-title">Schools</h3>
+								<ul class="benefits-list">
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">Improve overall academic outcomes</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">Reduce dropout rates</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">Digital transformation support</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">Comprehensive reporting tools</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✓</span>
+										<span class="benefit-text">Institutional partnerships</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Continue with remaining sections... -->
+			<!-- I need to continue rebuilding the rest of your page from the dist/index.html -->
+			
+		</main>
+
+		<Footer />
+	</body>
+</html>

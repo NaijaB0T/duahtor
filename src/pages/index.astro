@@ -8,43 +8,2967 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title="DUAHTOR - Liberia's First AI Learning Companion" description="Join thousands of Liberian students transforming their learning experience with AI-powered tutoring. Get instant homework help, personalized lessons, and 24/7 academic support." />
 	</head>
 	<body>
+		<!-- Skip to main content link for keyboard navigation -->
+		<a href="#main-content" class="skip-link">Skip to main content</a>
 		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+		
+		<!-- Main Content -->
+		<main id="main-content">
+			<!-- Hero Section -->
+			<section class="hero-section" aria-labelledby="hero-title">
+				<!-- Split Background Images -->
+				<div class="hero-split-background">
+					<div class="hero-background-half hero-background-before">
+						<img 
+							src="/images/A Liberian student alone with a textbook, looking confused..jpg" 
+							alt="A Liberian student alone with a textbook, looking confused" 
+							class="hero-bg-image"
+							loading="eager"
+						/>
+						<div class="background-label before-label">Before</div>
+					</div>
+					<div class="hero-background-half hero-background-after">
+						<img 
+							src="/images/Same student, still in same setting, now confidently learning with DUAHTOR on a tablet.jpg" 
+							alt="Same student, still in same setting, now confidently learning with DUAHTOR on a tablet" 
+							class="hero-bg-image"
+							loading="eager"
+						/>
+						<div class="background-label after-label">After</div>
+					</div>
+				</div>
+				
+				<!-- Hero Content Overlay -->
+				<div class="hero-overlay">
+					<div class="container">
+						<div class="hero-content-center">
+								<div class="hero-text-container">
+									<div class="hero-welcome">Welcome to a New Chapter in Learning</div>
+									<h1 id="hero-title" class="hero-title">
+										Liberia, Meet Your First 
+										<span class="text-gradient">AI Learning Companion</span>
+									</h1>
+									<p class="hero-subheadline">
+										Education is finally catching up to you — not the other way around.
+									</p>
+									
+									<div class="pain-points">
+										<div class="pain-point fade-in-up" style="animation-delay: 0.2s">
+											<div class="pain-icon" aria-hidden="true">🗣</div>
+											<span class="pain-text">Struggling with homework?</span>
+										</div>
+										<div class="pain-point fade-in-up" style="animation-delay: 0.4s">
+											<div class="pain-icon" aria-hidden="true">👩</div>
+											<span class="pain-text">Too many students, too few teachers?</span>
+										</div>
+										<div class="pain-point fade-in-up" style="animation-delay: 0.6s">
+											<div class="pain-icon" aria-hidden="true">📚</div>
+											<span class="pain-text">Can't afford tutoring?</span>
+										</div>
+										<div class="pain-point fade-in-up" style="animation-delay: 0.8s">
+											<div class="pain-icon" aria-hidden="true">🌐</div>
+											<span class="pain-text">No reliable internet?</span>
+										</div>
+									</div>
+									
+									<div class="duahtor-promise">
+										<strong>DUAHTOR was built to help — even offline.</strong>
+									</div>
+									
+									<div class="cta-buttons">
+										<a href="#how-it-works" class="btn btn-secondary btn-hero">
+											Watch How It Works
+										</a>
+										<a href="#waitlist" class="btn btn-primary btn-hero">
+											🔘 Join the Early Access Waitlist
+										</a>
+									</div>
+									
+									<div class="social-proof">
+										<p class="social-proof-text">
+											<strong>500+</strong> students already on the waitlist
+										</p>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Why DUAHTOR Section -->
+			<section class="why-duahtor-section" aria-labelledby="why-duahtor-title">
+				<div class="container">
+					<div class="section-header">
+						<h2 id="why-duahtor-title" class="section-title">
+							Why DUAHTOR?
+						</h2>
+					</div>
+					<div class="why-duahtor-content">
+						<h3 class="why-duahtor-headline">
+							Because Every Liberian Child Deserves a Learning Ally.
+						</h3>
+						<p class="why-duahtor-description">
+							DUAHTOR is a Liberian EdTech platform and AI-powered learning platform built in Liberia, for Liberia; where school isn't always easy, resources are limited, and families need support they can trust. Whether you're a student, teacher, or parent, DUAHTOR helps you learn better, teach smarter, and stay connected — even with little to no internet.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Who DUAHTOR Helps Section -->
+			<section id="who-its-for" class="who-helps-section" aria-labelledby="who-helps-title">
+				<div class="container">
+					<div class="section-header">
+						<h2 id="who-helps-title" class="section-title">
+							Who DUAHTOR Helps
+						</h2>
+						<h3 class="section-headline">
+							💬 One App. For All Kinds of Learners.
+						</h3>
+					</div>
+					
+					<div class="target-groups-grid">
+						<!-- Students Card -->
+						<div class="target-group-card">
+							<div class="card-content">
+								<div class="icon-container">
+									<div class="icon-wrapper">
+										<span class="target-icon">👩🎓</span>
+									</div>
+								</div>
+								<h3 class="card-title">Students</h3>
+								<ul class="benefits-list">
+									<li class="benefit-item">
+										<span class="checkmark">✔</span>
+										<span class="benefit-text">Get help with hard topics</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✔</span>
+										<span class="benefit-text">Practice reading with voice tools</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✔</span>
+										<span class="benefit-text">Track your own progress</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✔</span>
+										<span class="benefit-text">Earn badges & level up</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Educators Card -->
+						<div class="target-group-card">
+							<div class="card-content">
+								<div class="icon-container">
+									<div class="icon-wrapper">
+										<span class="target-icon">👩‍🏫</span>
+									</div>
+								</div>
+								<h3 class="card-title">Educators</h3>
+								<ul class="benefits-list">
+									<li class="benefit-item">
+										<span class="checkmark">✔</span>
+										<span class="benefit-text">Save time on lesson prep</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✔</span>
+										<span class="benefit-text">Use Liberia-aligned and global standard teaching tools</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✔</span>
+										<span class="benefit-text">Plan offline lessons</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✔</span>
+										<span class="benefit-text">Get insights into class performance</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Parents Card -->
+						<div class="target-group-card">
+							<div class="card-content">
+								<div class="icon-container">
+									<div class="icon-wrapper">
+										<span class="target-icon">👩‍👧‍👦</span>
+									</div>
+								</div>
+								<h3 class="card-title">Parents</h3>
+								<ul class="benefits-list">
+									<li class="benefit-item">
+										<span class="checkmark">✔</span>
+										<span class="benefit-text">See how your child is doing</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✔</span>
+										<span class="benefit-text">Get suggestions to support them</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✔</span>
+										<span class="benefit-text">Affordable learning without tutoring costs</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Lifelong Learners Card -->
+						<div class="target-group-card">
+							<div class="card-content">
+								<div class="icon-container">
+									<div class="icon-wrapper">
+										<span class="target-icon">👴</span>
+									</div>
+								</div>
+								<h3 class="card-title">Lifelong Learners</h3>
+								<ul class="benefits-list">
+									<li class="benefit-item">
+										<span class="checkmark">✔</span>
+										<span class="benefit-text">Take skills courses from DUAHTOR University</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✔</span>
+										<span class="benefit-text">Learn at your own pace, anytime</span>
+									</li>
+									<li class="benefit-item">
+										<span class="checkmark">✔</span>
+										<span class="benefit-text">Study offline after work</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- How It Works Section -->
+			<section id="how-it-works" class="how-it-works-section" aria-labelledby="how-it-works-title">
+				<div class="container">
+					<div class="section-header">
+						<h2 id="how-it-works-title" class="section-title">
+							How It Works
+						</h2>
+						<h3 class="section-headline">
+							Learning Made Simple — Wherever You Are.
+						</h3>
+					</div>
+
+					<!-- Features List -->
+					<!-- Dev Note: Soft mockups or illustrations of app screens beside each feature description -->
+					<div class="features-list">
+						<!-- Smart AI Tutor -->
+						<div class="feature-item">
+							<div class="feature-content">
+								<div class="feature-icon">📱</div>
+								<div class="feature-info">
+									<h3 class="feature-title">Smart AI Tutor</h3>
+									<p class="feature-description">
+										Ask questions, get step-by-step explanations — in text or voice. It adapts to your level and learning speed.
+									</p>
+								</div>
+							</div>
+							<div class="feature-mockup">
+								<div class="device-frame">
+									<div class="device-content">
+										<div class="chat-mockup">
+											<div class="chat-header">
+												<div class="chat-avatar">🤖</div>
+												<span class="chat-name">DUAHTOR AI</span>
+											</div>
+											<div class="chat-messages">
+												<div class="message user-message">
+													<div class="message-bubble">
+														"Explain photosynthesis"
+													</div>
+												</div>
+												<div class="message ai-message">
+													<div class="message-bubble">
+														Plants use sunlight, water, and CO₂ to make food. Let me break this down step by step...
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Assignment Help -->
+						<div class="feature-item reverse">
+							<div class="feature-content">
+								<div class="feature-icon">📝</div>
+								<div class="feature-info">
+									<h3 class="feature-title">Assignment Help</h3>
+									<p class="feature-description">
+										Snap or type your homework — DUAHTOR guides you through it. No direct copying, learner meet a quiz threshold of understanding.
+									</p>
+								</div>
+							</div>
+							<div class="feature-mockup">
+								<div class="device-frame">
+									<div class="device-content">
+										<div class="assignment-mockup">
+											<div class="upload-area">
+												<div class="upload-icon">📤</div>
+												<p class="upload-text">Photo uploaded!</p>
+											</div>
+											<div class="quiz-prompt">
+												<h4>Understanding Check</h4>
+												<p>Before we continue, can you tell me what this equation represents?</p>
+												<div class="quiz-options">
+													<button class="quiz-option">A) Distance formula</button>
+													<button class="quiz-option active">B) Quadratic equation</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Super Reading Coach -->
+						<div class="feature-item">
+							<div class="feature-content">
+								<div class="feature-icon">📖</div>
+								<div class="feature-info">
+									<h3 class="feature-title">Super Reading Coach</h3>
+									<p class="feature-description">
+										Listen, follow, read, and record. Practice pronunciation and fluency. (Great for readers of all levels!)
+									</p>
+								</div>
+							</div>
+							<div class="feature-mockup">
+								<div class="device-frame">
+									<div class="device-content">
+										<div class="reading-mockup">
+											<div class="reading-header">
+												<h4>Reading Practice</h4>
+												<div class="audio-controls">
+													<button class="play-btn">▶️</button>
+													<button class="record-btn">🎤</button>
+												</div>
+											</div>
+											<div class="reading-text">
+												<p>The <span class="highlight-word">baobab</span> tree stands tall in the African savanna...</p>
+											</div>
+											<div class="pronunciation-guide">
+												<strong>baobab</strong>: /ˈbaʊbæb/
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Offline Learning Mode -->
+						<div class="feature-item reverse">
+							<div class="feature-content">
+								<div class="feature-icon">📶</div>
+								<div class="feature-info">
+									<h3 class="feature-title">Offline Learning Mode</h3>
+									<p class="feature-description">
+										Save sessions when online, study them anytime — no data needed after that.
+									</p>
+								</div>
+							</div>
+							<div class="feature-mockup">
+								<div class="device-frame">
+									<div class="device-content">
+										<div class="offline-mockup">
+											<div class="offline-status">
+												<span class="offline-icon">📶</span>
+												<span class="status-text">Offline Mode Active</span>
+											</div>
+											<div class="saved-lessons">
+												<div class="lesson-item">
+													<span class="lesson-icon">📚</span>
+													<span class="lesson-title">Mathematics - Algebra</span>
+													<span class="download-status">✓</span>
+												</div>
+												<div class="lesson-item">
+													<span class="lesson-icon">🧪</span>
+													<span class="lesson-title">Chemistry - Elements</span>
+													<span class="download-status">✓</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Local Language Support -->
+						<div class="feature-item">
+							<div class="feature-content">
+								<div class="feature-icon">🗣</div>
+								<div class="feature-info">
+									<h3 class="feature-title">Local Language Support</h3>
+									<p class="feature-description">
+										Available in English, French, Swahili, Arabic — with more coming.
+									</p>
+								</div>
+							</div>
+							<div class="feature-mockup">
+								<div class="device-frame">
+									<div class="device-content">
+										<div class="language-mockup">
+											<div class="language-selector">
+												<h4>Choose Your Language</h4>
+												<div class="language-options">
+													<button class="lang-option active">🇺🇸 English</button>
+													<button class="lang-option">🇫🇷 Français</button>
+													<button class="lang-option">🇰🇪 Kiswahili</button>
+													<button class="lang-option">🇸🇦 العربية</button>
+												</div>
+											</div>
+											<div class="translated-content">
+												<p class="sample-text">Hello! How can I help you learn today?</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Gamified Learning -->
+						<div class="feature-item reverse">
+							<div class="feature-content">
+								<div class="feature-icon">🎮</div>
+								<div class="feature-info">
+									<h3 class="feature-title">Gamified Learning</h3>
+									<p class="feature-description">
+										Earn rewards, unlock challenges, stay motivated.
+									</p>
+								</div>
+							</div>
+							<div class="feature-mockup">
+								<div class="device-frame">
+									<div class="device-content">
+										<div class="gamification-mockup">
+											<div class="achievement-notification">
+												<div class="achievement-icon">🏆</div>
+												<div class="achievement-text">
+													<h4>Math Master!</h4>
+													<p>Completed 10 algebra problems</p>
+												</div>
+											</div>
+											<div class="progress-section">
+												<div class="level-info">
+													<span class="level">Level 5</span>
+													<div class="xp-bar">
+														<div class="xp-fill" style="width: 70%"></div>
+													</div>
+													<span class="xp-text">70/100 XP</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Early Feedback Section -->
+			<section class="early-feedback-section" aria-labelledby="early-feedback-title">
+				<div class="container">
+					<div class="section-header">
+						<h2 id="early-feedback-title" class="section-title">
+							Early Feedback from Real Beta Users
+						</h2>
+					</div>
+					
+					<div class="testimonials-grid">
+						<!-- Parent Testimonial -->
+						<div class="testimonial-card">
+							<div class="testimonial-content">
+								<div class="quote-icon" aria-hidden="true">"</div>
+								<blockquote class="testimonial-quote">
+									I never thought my daughter would understand math without a tutor. But with DUAHTOR, she's explaining topics to ME!
+								</blockquote>
+								<div class="testimonial-author">
+									<div class="author-avatar">
+										<div class="avatar-placeholder">👩</div>
+									</div>
+									<div class="author-info">
+										<cite class="author-name">Josephine</cite>
+										<p class="author-role">Parent, Kakata</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Teacher Testimonial -->
+						<div class="testimonial-card">
+							<div class="testimonial-content">
+								<div class="quote-icon" aria-hidden="true">"</div>
+								<blockquote class="testimonial-quote">
+									Our school has over 50 students per class. DUAHTOR helped me teach the slow learners while the rest continued.
+								</blockquote>
+								<div class="testimonial-author">
+									<div class="author-avatar">
+										<div class="avatar-placeholder">👩‍🏫</div>
+									</div>
+									<div class="author-info">
+										<cite class="author-name">Miss Wesseh</cite>
+										<p class="author-role">Teacher, Nimba</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Demo Section -->
+			<section class="demo-section" aria-labelledby="demo-title">
+				<div class="container">
+					<div class="section-header">
+						<h3 class="section-headline">
+							🎥 Watch the Demo (3–5 minutes)
+						</h3>
+						<p class="section-subtitle">
+							See exactly how DUAHTOR works for students, parents, and teachers — in real use cases.
+						</p>
+					</div>
+					
+					<div class="demo-container">
+						<div class="demo-video-placeholder">
+							<div class="video-preview">
+								<div class="video-thumbnail">
+									<div class="play-button-large">
+										<span class="play-icon">▶️</span>
+									</div>
+									<div class="video-overlay">
+										<div class="video-title">DUAHTOR Platform Demo</div>
+										<div class="video-duration">3:42</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="demo-cta">
+							<button class="btn btn-primary btn-demo" id="play-demo-btn">
+								🔘 Play Full Demo
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- What's Coming Soon Section -->
+			<section class="coming-soon-section" aria-labelledby="coming-soon-title">
+				<div class="container">
+					<div class="section-header">
+						<h2 id="coming-soon-title" class="section-title">
+							What's Coming Soon
+						</h2>
+					</div>
+					
+					<div class="coming-soon-grid">
+						<!-- DUAHTOR University -->
+						<div class="coming-soon-card">
+							<div class="coming-soon-badge">Coming Soon</div>
+							<div class="feature-icon-large">🎓</div>
+							<h3 class="coming-soon-title">DUAHTOR University</h3>
+							<p class="coming-soon-description">
+								Career-ready courses for students and adults.
+							</p>
+							<div class="coming-soon-highlight">
+								(Certificates + life-changing skills)
+							</div>
+						</div>
+
+						<!-- Educator Hub -->
+						<div class="coming-soon-card">
+							<div class="coming-soon-badge">Coming Soon</div>
+							<div class="feature-icon-large">📚</div>
+							<h3 class="coming-soon-title">Educator Hub</h3>
+							<p class="coming-soon-description">
+								Lesson plans, worksheets, training tools.
+							</p>
+						</div>
+
+						<!-- Premium Plan -->
+						<div class="coming-soon-card featured">
+							<div class="coming-soon-badge premium">Coming Soon</div>
+							<div class="feature-icon-large">💡</div>
+							<h3 class="coming-soon-title">Premium Plan</h3>
+							<p class="coming-soon-description">
+								Full feature access, offline sync, zero data usage (via partner networks).
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Pricing Preview Section -->
+			<section id="features" class="pricing-preview-section" aria-labelledby="pricing-title">
+				<div class="container">
+					<div class="section-header">
+						<h2 id="pricing-title" class="section-title">
+							Pricing Preview
+						</h2>
+						<h3 class="section-headline">
+							💡 Simple, Honest Pricing – Start Free, Unlock More Later
+						</h3>
+					</div>
+
+					<div class="pricing-table-container">
+						<div class="pricing-table-wrapper">
+							<table class="pricing-table">
+								<thead class="pricing-header">
+									<tr>
+										<th class="feature-column">Feature</th>
+										<th class="plan-column">
+											<div class="plan-info">
+												<h3 class="plan-name">Free Plan</h3>
+												<p class="plan-price">💸 $0<span class="price-period">/mo</span></p>
+											</div>
+										</th>
+										<th class="plan-column premium-column">
+											<div class="plan-info">
+												<h3 class="plan-name">Premium</h3>
+												<p class="plan-price">⭐ $4.99<span class="price-period">/mo</span></p>
+											</div>
+										</th>
+									</tr>
+								</thead>
+								<tbody class="pricing-body">
+									<tr class="feature-row">
+										<td class="feature-name">AI Tutor</td>
+										<td class="feature-value">✔ Basic help</td>
+										<td class="feature-value premium-value">✅ Unlimited sessions & voice chat</td>
+									</tr>
+									<tr class="feature-row alt-row">
+										<td class="feature-name">Assignment Help</td>
+										<td class="feature-value">✔ Basic guidance</td>
+										<td class="feature-value premium-value">✅ Full walkthrough & archive</td>
+									</tr>
+									<tr class="feature-row">
+										<td class="feature-name">Super Reading Coach</td>
+										<td class="feature-value">✔ Core tools</td>
+										<td class="feature-value premium-value">✅ Pronunciation + save progress</td>
+									</tr>
+									<tr class="feature-row alt-row">
+										<td class="feature-name">Offline Learning</td>
+										<td class="feature-value">✔ Manual save</td>
+										<td class="feature-value premium-value">✅ Smart auto-save + offline sync</td>
+									</tr>
+									<tr class="feature-row">
+										<td class="feature-name">Data-Included Access</td>
+										<td class="feature-value">❌ Own data required</td>
+										<td class="feature-value premium-value">✅ App-only internet (partner networks)</td>
+									</tr>
+									<tr class="feature-row alt-row">
+										<td class="feature-name">Multilingual Support</td>
+										<td class="feature-value">✔ English only</td>
+										<td class="feature-value premium-value">✅ French, Arabic, Swahili</td>
+									</tr>
+									<tr class="feature-row">
+										<td class="feature-name">Educator Tools</td>
+										<td class="feature-value">❌</td>
+										<td class="feature-value premium-value">✅ Lesson planner, offline teaching</td>
+									</tr>
+									<tr class="feature-row alt-row">
+										<td class="feature-name">Parental Monitoring</td>
+										<td class="feature-value">❌</td>
+										<td class="feature-value premium-value">✅ Real-time insights, AI tips</td>
+									</tr>
+									<tr class="feature-row">
+										<td class="feature-name">DUAHTOR University</td>
+										<td class="feature-value">❌</td>
+										<td class="feature-value premium-value">✅ Full access (certificates)</td>
+									</tr>
+									<tr class="feature-row alt-row">
+										<td class="feature-name">Gamified Learning</td>
+										<td class="feature-value">✔ Limited badges</td>
+										<td class="feature-value premium-value">✅ Full missions & leaderboards</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="pricing-actions">
+							<div class="action-buttons">
+								<button class="btn btn-outline">Start Free</button>
+								<button class="btn btn-primary">Choose Premium</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="pricing-footer">
+						<button class="view-full-comparison" onclick="openPricingModal()" aria-label="Open detailed pricing comparison table">
+							<span class="comparison-text">View Full Feature Comparison</span>
+							<span class="comparison-icon" aria-hidden="true">📊</span>
+						</button>
+					</div>
+				</div>
+			</section>
+
+			<!-- Pricing Modal -->
+			<div id="pricing-modal" class="pricing-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+				<div class="modal-overlay" onclick="closePricingModal()" aria-hidden="true"></div>
+				<div class="modal-content">
+					<div class="modal-header">
+						<h2 id="modal-title" class="modal-title">Full Feature Comparison: What You Get with DUAHTOR</h2>
+						<button class="modal-close" onclick="closePricingModal()" aria-label="Close comparison modal">
+							<span class="close-icon" aria-hidden="true">✕</span>
+						</button>
+					</div>
+					
+					<div class="modal-body">
+						<div class="detailed-comparison">
+							<table class="detailed-table">
+								<thead>
+									<tr>
+										<th class="feature-column-detailed">Feature</th>
+										<th class="plan-column-detailed">Free Plan<br>💸 $0 / Forever</th>
+										<th class="plan-column-detailed premium-header">Premium Plan<br>⭐ $4.99/month</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="detail-row">
+										<td class="feature-detail">AI Tutor</td>
+										<td class="value-cell">Ask questions in basic subjects like Math, English, and Science. Text-based only.</td>
+										<td class="value-cell premium-cell">Unlimited, fast responses in all subjects. Voice-enabled, step-by-step breakdowns. Adapts to your level.</td>
+									</tr>
+									<tr class="detail-row alt">
+										<td class="feature-detail">Assignment Help</td>
+										<td class="value-cell">Type in or select quiz/homework questions. Limited help, no archive.</td>
+										<td class="value-cell premium-cell">Snap photo, voice or type. Detailed explanations. Past questions saved for review.</td>
+									</tr>
+									<tr class="detail-row">
+										<td class="feature-detail">Super Reading Coach</td>
+										<td class="value-cell">Basic read-along features and simple recording.</td>
+										<td class="value-cell premium-cell">Multilingual voices, adjustable reading speed, real-time feedback, fluency progress tracking.</td>
+									</tr>
+									<tr class="detail-row alt">
+										<td class="feature-detail">Offline Learning</td>
+										<td class="value-cell">You can manually save one lesson or session at a time for offline review.</td>
+										<td class="value-cell premium-cell">Automatic offline mode. Sessions and resources saved and synced. Learn anytime, no data needed.</td>
+									</tr>
+									<tr class="detail-row">
+										<td class="feature-detail">Data-Included Access</td>
+										<td class="value-cell">You need your own mobile data or WiFi to access most features.</td>
+										<td class="value-cell premium-cell">Access included via partner telcos. No extra bundles or mobile data needed (for supported features).</td>
+									</tr>
+									<tr class="detail-row alt">
+										<td class="feature-detail">Multilingual Support</td>
+										<td class="value-cell">English only.</td>
+										<td class="value-cell premium-cell">Supports English, French, Arabic, Swahili — with more coming. Read, speak, and learn in your preferred language.</td>
+									</tr>
+									<tr class="detail-row">
+										<td class="feature-detail">Educator Toolkit</td>
+										<td class="value-cell">Not available.</td>
+										<td class="value-cell premium-cell">AI-powered lesson plans, ready-to-use worksheets, curated video content, offline teaching resources.</td>
+									</tr>
+									<tr class="detail-row alt">
+										<td class="feature-detail">Parental Monitoring Tools</td>
+										<td class="value-cell">Not available.</td>
+										<td class="value-cell premium-cell">Real-time view of your child's usage, progress tracker, and helpful at-home tips from the AI coach.</td>
+									</tr>
+									<tr class="detail-row">
+										<td class="feature-detail">DUAHTOR University</td>
+										<td class="value-cell">Locked.</td>
+										<td class="value-cell premium-cell">Full access to career-building micro-courses in entrepreneurship, tech, health, and more. Earn certificates.</td>
+									</tr>
+									<tr class="detail-row alt">
+										<td class="feature-detail">Gamified Learning</td>
+										<td class="value-cell">Earn limited points and badges.</td>
+										<td class="value-cell premium-cell">Full challenge system, mission unlocks, competitive leaderboard, and rewards to keep learners motivated.</td>
+									</tr>
+									<tr class="detail-row">
+										<td class="feature-detail">Progress Dashboard</td>
+										<td class="value-cell">Basic topic completion tracking.</td>
+										<td class="value-cell premium-cell">Detailed insights into strengths and weak spots. Personalized learning recommendations.</td>
+									</tr>
+									<tr class="detail-row alt">
+										<td class="feature-detail">Support Access</td>
+										<td class="value-cell">Email-only response (2–3 days).</td>
+										<td class="value-cell premium-cell">Priority in-app chat support. Early access to updates and new features.</td>
+									</tr>
+									<tr class="detail-row">
+										<td class="feature-detail">Referral Program</td>
+										<td class="value-cell">Join and earn small bonuses.</td>
+										<td class="value-cell premium-cell">Higher reward rates, faster payouts, and exclusive affiliate tools.</td>
+									</tr>
+									<tr class="detail-row alt">
+										<td class="feature-detail">Voice Support</td>
+										<td class="value-cell">No voice functionality.</td>
+										<td class="value-cell premium-cell">Voice-to-text, AI reads questions aloud, and full conversational AI tutoring.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="what-best-section">
+							<h3 class="best-title">What's Best for You?</h3>
+							<div class="recommendation-grid">
+								<div class="recommendation-item">
+									<div class="rec-icon">🎓</div>
+									<div class="rec-content">
+										<strong>If you're exploring:</strong> Stick with the Free Plan to get a feel for how DUAHTOR works.
+									</div>
+								</div>
+								<div class="recommendation-item">
+									<div class="rec-icon">🚀</div>
+									<div class="rec-content">
+										<strong>If you're serious about results:</strong> Upgrade to Premium for full access, offline flexibility, and personalized learning.
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="modal-footer">
+						<div class="modal-actions">
+							<button class="btn btn-outline" onclick="closePricingModal()">🔙 Close Comparison</button>
+							<button class="btn btn-primary">🟢 Join the Waitlist for Premium</button>
+							<button class="btn btn-secondary">🔘 Become a Founding Supporter – Get 3 Months Premium Free</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Founding Supporter Perks Section -->
+			<section id="waitlist" class="founding-supporter-section" aria-labelledby="founding-supporter-title">
+				<div class="container">
+					<div class="section-header text-center">
+						<h2 id="founding-supporter-title" class="founder-title">
+							🎉 Become a Founding Supporter – Just $29
+						</h2>
+						<p class="founder-subtitle">
+							Limited to first <strong class="highlight-number">500</strong> supporters.
+						</p>
+					</div>
+					
+					<div class="supporter-offer-card">
+						<div class="offer-content">
+							<h3 class="offer-title">Includes:</h3>
+							<div class="benefits-list-simple">
+								<div class="benefit-item-simple">
+									<span class="benefit-check">✅</span>
+									<span class="benefit-text">3 Months Premium</span>
+								</div>
+								<div class="benefit-item-simple">
+									<span class="benefit-check">👕</span>
+									<span class="benefit-text">Free Branded T-Shirt</span>
+								</div>
+								<div class="benefit-item-simple">
+									<span class="benefit-check">📶</span>
+									<span class="benefit-text">Data-included access</span>
+								</div>
+								<div class="benefit-item-simple">
+									<span class="benefit-check">🎖</span>
+									<span class="benefit-text">Founding Badge in your profile</span>
+								</div>
+							</div>
+						</div>
+						
+						<div class="payment-section">
+							<div class="payment-options">
+								<h4 class="payment-title">Choose Your Payment Method:</h4>
+								<div class="payment-methods">
+									<button class="payment-method" data-method="mtn">
+										<span class="payment-icon">📱</span>
+										<span class="payment-name">MTN Money</span>
+									</button>
+									<button class="payment-method" data-method="orange">
+										<span class="payment-icon">🧡</span>
+										<span class="payment-name">Orange Money</span>
+									</button>
+									<button class="payment-method" data-method="card">
+										<span class="payment-icon">💳</span>
+										<span class="payment-name">Card Payment</span>
+									</button>
+								</div>
+							</div>
+							
+							<div class="waitlist-option">
+								<label class="checkbox-container">
+									<input type="checkbox" id="join-waitlist-checkbox" checked>
+									<span class="checkmark-custom">☑</span>
+									<span class="checkbox-label">Yes, I also want to join the waitlist</span>
+								</label>
+							</div>
+							
+							<div class="supporter-cta">
+								<button class="btn-supporter" id="become-supporter-btn">
+									🔘 Become a Supporter
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Join Early Access Section -->
+			<section class="early-access-section" aria-labelledby="early-access-title">
+				<div class="container">
+					<div class="section-header">
+						<h2 id="early-access-title" class="section-title">
+							Join the Early Access List
+						</h2>
+						<h3 class="section-headline">
+							📬 Want to Be First to Try DUAHTOR?
+						</h3>
+						<p class="section-subtitle">
+							Get early access, behind-the-scenes updates, and a chance to help shape Liberia's next big education innovation.
+						</p>
+					</div>
+					
+					<div class="early-access-form-container">
+						<form class="early-access-form" id="waitlist-form">
+							<div class="form-grid">
+								<div class="form-group">
+									<label for="full-name" class="form-label">Full Name</label>
+									<input 
+										type="text" 
+										id="full-name" 
+										name="fullName" 
+										class="form-input" 
+										required 
+										placeholder="Enter your full name"
+									>
+								</div>
+
+								<div class="form-group">
+									<label for="contact" class="form-label">Email or WhatsApp</label>
+									<input 
+										type="text" 
+										id="contact" 
+										name="contact" 
+										class="form-input" 
+										required 
+										placeholder="your@email.com or +231 XX XXX XXXX"
+									>
+								</div>
+
+								<div class="form-group">
+									<label for="user-type" class="form-label">Who Are You?</label>
+									<select id="user-type" name="userType" class="form-select" required>
+										<option value="">Select your role</option>
+										<option value="student">Student</option>
+										<option value="parent">Parent</option>
+										<option value="educator">Educator</option>
+										<option value="other">Other</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label for="county" class="form-label">County</label>
+									<select id="county" name="county" class="form-select" required>
+										<option value="">Select your county</option>
+										<option value="bomi">Bomi</option>
+										<option value="bong">Bong</option>
+										<option value="gbarpolu">Gbarpolu</option>
+										<option value="grand-bassa">Grand Bassa</option>
+										<option value="grand-cape-mount">Grand Cape Mount</option>
+										<option value="grand-gedeh">Grand Gedeh</option>
+										<option value="grand-kru">Grand Kru</option>
+										<option value="lofa">Lofa</option>
+										<option value="margibi">Margibi</option>
+										<option value="maryland">Maryland</option>
+										<option value="montserrado">Montserrado</option>
+										<option value="nimba">Nimba</option>
+										<option value="rivercess">River Cess</option>
+										<option value="river-gee">River Gee</option>
+										<option value="sinoe">Sinoe</option>
+									</select>
+								</div>
+
+								<div class="form-group full-width">
+									<label for="country" class="form-label">Country <span class="optional">(optional)</span></label>
+									<input 
+										type="text" 
+										id="country" 
+										name="country" 
+										class="form-input" 
+										placeholder="If outside Liberia, specify your country"
+									>
+								</div>
+							</div>
+
+							<div class="form-actions">
+								<button type="submit" class="btn btn-primary btn-large">
+									🔘 Join the Waitlist
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+
+			<!-- Contact Section -->
+			<section id="contact" class="contact-section" aria-labelledby="contact-title">
+				<div class="container">
+					<div class="section-header">
+						<h2 id="contact-title" class="section-title">
+							Get in Touch
+						</h2>
+						<p class="section-subtitle">
+							Have questions? We'd love to hear from you.
+						</p>
+					</div>
+					
+					<div class="contact-content">
+						<div class="contact-info">
+							<div class="contact-item">
+								<span class="contact-icon">📧</span>
+								<div class="contact-details">
+									<h3>Email Us</h3>
+									<p>hello@duahtor.com</p>
+								</div>
+							</div>
+							<div class="contact-item">
+								<span class="contact-icon">💬</span>
+								<div class="contact-details">
+									<h3>Join Our Community</h3>
+									<p>Connect with other learners</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
+
 		<Footer />
 	</body>
 </html>
+
+<style>
+	/* Hero Section with Split Background */
+	.hero-section {
+		min-height: 100vh;
+		position: relative;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+	}
+
+	/* Split Background */
+	.hero-split-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		z-index: 1;
+	}
+	
+	.hero-background-half {
+		width: 50%;
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+	}
+	
+	.hero-bg-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+	
+	.hero-background-before::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 49, 83, 0.7); /* Blue overlay for readability */
+		z-index: 2;
+	}
+	
+	.hero-background-after::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 49, 83, 0.6); /* Slightly lighter overlay */
+		z-index: 2;
+	}
+	
+	.background-label {
+		position: absolute;
+		top: 2rem;
+		left: 2rem;
+		background: rgba(255, 255, 255, 0.9);
+		color: var(--color-charcoal-gray);
+		padding: 0.5rem 1rem;
+		border-radius: var(--radius-lg);
+		font-weight: 600;
+		font-size: 0.875rem;
+		z-index: 3;
+		backdrop-filter: blur(8px);
+	}
+	
+	.before-label {
+		background: rgba(255, 130, 67, 0.9);
+		color: var(--color-pure-white);
+	}
+	
+	.after-label {
+		background: rgba(34, 197, 94, 0.9);
+		color: var(--color-pure-white);
+	}
+
+	/* Hero Content Overlay */
+	.hero-overlay {
+		position: relative;
+		z-index: 10;
+		width: 100%;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		padding-top: 8rem; /* Account for fixed header */
+		padding-bottom: 4rem;
+	}
+	
+	.hero-content-center {
+		text-align: center;
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	.hero-welcome {
+		font-size: 1.125rem;
+		font-weight: 500;
+		color: var(--color-maize-yellow);
+		margin-bottom: 1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+	}
+
+	.hero-title {
+		font-size: 3.5rem;
+		font-weight: 700;
+		line-height: 1.1;
+		margin-bottom: 1.5rem;
+		color: var(--color-pure-white);
+		font-family: 'Poppins', sans-serif;
+		text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+	}
+
+	.hero-subheadline {
+		font-size: 1.25rem;
+		font-weight: 400;
+		color: rgba(255, 255, 255, 0.9);
+		line-height: 1.5;
+		margin-bottom: 2rem;
+		font-style: italic;
+		text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+	}
+
+	.pain-points {
+		margin: 2rem 0;
+	}
+
+	.pain-point {
+		display: flex;
+		align-items: center;
+		margin-bottom: 1rem;
+		opacity: 0;
+		transform: translateY(20px);
+		animation: fadeInUp 0.6s ease-out forwards;
+	}
+
+	.pain-icon {
+		font-size: 1.5rem;
+		margin-right: 1rem;
+		min-width: 2rem;
+	}
+
+	.pain-text {
+		font-size: 1.125rem;
+		color: var(--color-pure-white);
+		font-weight: 500;
+		text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		margin: 2.5rem 0;
+	}
+
+	.btn-hero {
+		padding: 1rem 2rem;
+		font-size: 1.125rem;
+		font-weight: 600;
+		border-radius: var(--radius-lg);
+	}
+
+	.duahtor-promise {
+		background: rgba(242, 199, 68, 0.15);
+		border-left: 4px solid var(--color-maize-yellow);
+		padding: 1rem 1.5rem;
+		margin: 2rem 0;
+		border-radius: var(--radius-md);
+		backdrop-filter: blur(8px);
+	}
+
+	.duahtor-promise strong {
+		color: var(--color-pure-white);
+		font-size: 1.125rem;
+		font-weight: 600;
+		text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	}
+
+	.social-proof-text {
+		color: rgba(255, 255, 255, 0.8);
+		font-size: 0.95rem;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	}
+
+	/* Transformation Card */
+	.transformation-card {
+		padding: 2rem;
+		border-radius: var(--radius-2xl);
+		backdrop-filter: blur(16px);
+		background: rgba(255, 255, 255, 0.1);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		box-shadow: var(--shadow-xl);
+	}
+
+	.transformation-grid {
+		display: grid;
+		grid-template-columns: 1fr auto 1fr;
+		gap: 2rem;
+		align-items: center;
+	}
+
+	.before-section, .after-section {
+		text-align: center;
+		position: relative;
+	}
+
+	.section-label {
+		position: absolute;
+		top: -0.5rem;
+		left: 50%;
+		transform: translateX(-50%);
+		padding: 0.25rem 0.75rem;
+		border-radius: var(--radius-md);
+		font-size: 0.75rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		z-index: 10;
+	}
+
+	.before-badge {
+		background: rgba(255, 107, 53, 0.9);
+		color: var(--color-pure-white);
+	}
+
+	.after-badge {
+		background: rgba(242, 199, 68, 0.9);
+		color: var(--color-charcoal-gray);
+	}
+
+	.student-visual {
+		padding: 2rem 1rem;
+		background: rgba(255, 255, 255, 0.05);
+		border-radius: var(--radius-lg);
+		margin: 1rem 0;
+	}
+
+	.student-illustration {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+		margin-bottom: 1rem;
+		position: relative;
+	}
+
+	.student-face {
+		font-size: 3rem;
+	}
+
+	.textbook, .tablet {
+		font-size: 2rem;
+	}
+
+	.duahtor-helper {
+		font-size: 1.5rem;
+		position: absolute;
+		top: -0.5rem;
+		right: -0.5rem;
+		background: rgba(242, 199, 68, 0.9);
+		border-radius: 50%;
+		padding: 0.25rem;
+	}
+	
+	/* Student Images */
+	.student-image {
+		width: 100%;
+		max-width: 300px;
+		height: auto;
+		border-radius: var(--radius-lg);
+		box-shadow: var(--shadow-md);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+	.student-image:hover {
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-lg);
+	}
+	.before-image {
+		border: 2px solid rgba(255, 130, 67, 0.3);
+	}
+	.after-image {
+		border: 2px solid rgba(34, 197, 94, 0.3);
+	}
+
+	.confident {
+		animation: pulse 2s ease-in-out infinite;
+	}
+
+	@keyframes pulse {
+		0%, 100% { transform: scale(1); }
+		50% { transform: scale(1.05); }
+	}
+
+	.visual-description {
+		color: rgba(255, 255, 255, 0.8);
+		font-size: 0.9rem;
+		line-height: 1.4;
+		font-style: italic;
+	}
+
+	.transformation-arrow {
+		text-align: center;
+	}
+
+	.arrow-icon {
+		font-size: 2rem;
+		color: var(--color-mango-tango);
+		font-weight: bold;
+	}
+
+	/* Why DUAHTOR Section */
+	.why-duahtor-section {
+		padding: 6rem 0;
+		background: var(--color-off-white);
+	}
+
+	.why-duahtor-content {
+		max-width: 800px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.why-duahtor-headline {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: var(--color-prussian-blue);
+		line-height: 1.2;
+		margin-bottom: 2rem;
+		font-family: 'Poppins', sans-serif;
+	}
+
+	.why-duahtor-description {
+		font-size: 1.25rem;
+		color: var(--color-charcoal-gray);
+		line-height: 1.7;
+		font-weight: 400;
+		margin: 0;
+	}
+
+	/* Section Styles */
+	.section-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.section-title {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: var(--color-prussian-blue);
+		margin-bottom: 1rem;
+	}
+
+	.section-subtitle {
+		font-size: 1.125rem;
+		color: var(--color-slate-gray);
+		max-width: 60ch;
+		margin: 0 auto;
+	}
+
+	.section-headline {
+		font-size: 1.75rem;
+		font-weight: 600;
+		color: var(--color-charcoal-gray);
+		margin: 1rem auto 0;
+		max-width: 60ch;
+	}
+
+	/* Who DUAHTOR Helps Section */
+	.who-helps-section {
+		padding: 6rem 0;
+		background: var(--color-pure-white);
+	}
+
+	.target-groups-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.target-group-card {
+		background: var(--color-pure-white);
+		border-radius: var(--radius-2xl);
+		padding: 2rem;
+		box-shadow: var(--shadow-lg);
+		border: 1px solid var(--color-border-gray);
+		transition: all 0.3s ease;
+		text-align: center;
+	}
+
+	.target-group-card:hover {
+		transform: translateY(-8px);
+		box-shadow: var(--shadow-xl);
+	}
+
+	.icon-wrapper {
+		width: 4rem;
+		height: 4rem;
+		border-radius: 50%;
+		background: linear-gradient(135deg, var(--color-mango-tango-light), var(--color-maize-yellow-light));
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto 1.5rem;
+	}
+
+	.target-icon {
+		font-size: 2rem;
+	}
+
+	.card-title {
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: var(--color-prussian-blue);
+		margin-bottom: 1.5rem;
+	}
+
+	.benefits-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		text-align: left;
+	}
+
+	.benefit-item {
+		display: flex;
+		align-items: flex-start;
+		margin-bottom: 0.75rem;
+	}
+
+	.checkmark {
+		color: var(--color-mango-tango);
+		font-weight: bold;
+		margin-right: 0.75rem;
+		margin-top: 0.125rem;
+	}
+
+	.benefit-text {
+		color: var(--color-charcoal-gray);
+		line-height: 1.5;
+	}
+
+	/* How It Works Section */
+	.how-it-works-section {
+		padding: 6rem 0;
+		background: var(--color-off-white);
+	}
+
+	.features-list {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 4rem;
+	}
+
+	.feature-item {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		align-items: center;
+		padding: 2rem 0;
+	}
+
+	.feature-item.reverse {
+		direction: rtl;
+	}
+
+	.feature-item.reverse > * {
+		direction: ltr;
+	}
+
+	.feature-content {
+		display: flex;
+		gap: 1.5rem;
+		align-items: flex-start;
+	}
+
+	.feature-icon {
+		font-size: 3rem;
+		flex-shrink: 0;
+		width: 4rem;
+		height: 4rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: linear-gradient(135deg, var(--color-mango-tango-light), var(--color-maize-yellow-light));
+		border-radius: 50%;
+		box-shadow: var(--shadow-md);
+	}
+
+	.feature-info {
+		flex: 1;
+	}
+
+	.feature-title {
+		font-size: 1.75rem;
+		font-weight: 600;
+		color: var(--color-prussian-blue);
+		margin-bottom: 1rem;
+		font-family: 'Poppins', sans-serif;
+	}
+
+	.feature-description {
+		font-size: 1.125rem;
+		color: var(--color-charcoal-gray);
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	.feature-mockup {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	/* Device Mockups */
+	.device-frame {
+		background: var(--color-pure-white);
+		border-radius: var(--radius-2xl);
+		padding: 1.5rem;
+		box-shadow: var(--shadow-xl);
+		border: 1px solid var(--color-border-gray);
+	}
+
+	.chat-header {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		padding: 1rem;
+		border-bottom: 1px solid var(--color-border-gray);
+		margin-bottom: 1rem;
+	}
+
+	.chat-avatar {
+		font-size: 1.5rem;
+	}
+
+	.chat-name {
+		font-weight: 600;
+		color: var(--color-prussian-blue);
+	}
+
+	.message {
+		margin-bottom: 1rem;
+	}
+
+	.message-bubble {
+		padding: 0.75rem 1rem;
+		border-radius: var(--radius-lg);
+		max-width: 80%;
+		line-height: 1.4;
+	}
+
+	.user-message .message-bubble {
+		background: var(--color-mango-tango-light);
+		margin-left: auto;
+		text-align: right;
+	}
+
+	.ai-message .message-bubble {
+		background: var(--color-off-white);
+		color: var(--color-charcoal-gray);
+	}
+
+	/* New Mockup Styles */
+	.quiz-prompt {
+		background: var(--color-off-white);
+		padding: 1rem;
+		border-radius: var(--radius-lg);
+		margin-top: 1rem;
+	}
+
+	.quiz-prompt h4 {
+		color: var(--color-prussian-blue);
+		margin-bottom: 0.5rem;
+		font-size: 1rem;
+	}
+
+	.quiz-options {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		margin-top: 1rem;
+	}
+
+	.quiz-option {
+		padding: 0.5rem 1rem;
+		border: 2px solid var(--color-border-gray);
+		background: var(--color-pure-white);
+		border-radius: var(--radius-md);
+		cursor: pointer;
+		transition: all 0.3s ease;
+		font-size: 0.9rem;
+	}
+
+	.quiz-option.active {
+		border-color: var(--color-mango-tango);
+		background: var(--color-mango-tango-light);
+	}
+
+	.audio-controls {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	.play-btn, .record-btn {
+		background: var(--color-mango-tango);
+		color: var(--color-pure-white);
+		border: none;
+		padding: 0.5rem;
+		border-radius: 50%;
+		cursor: pointer;
+		font-size: 0.9rem;
+	}
+
+	.pronunciation-guide {
+		background: var(--color-maize-yellow-light);
+		padding: 0.75rem;
+		border-radius: var(--radius-md);
+		margin-top: 1rem;
+		font-size: 0.9rem;
+		text-align: center;
+	}
+
+	.offline-status {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.75rem;
+		background: var(--color-mango-tango-light);
+		border-radius: var(--radius-lg);
+		margin-bottom: 1rem;
+	}
+
+	.saved-lessons {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.lesson-item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0.75rem;
+		background: var(--color-off-white);
+		border-radius: var(--radius-md);
+		font-size: 0.9rem;
+	}
+
+	.language-options {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.5rem;
+		margin: 1rem 0;
+	}
+
+	.lang-option {
+		padding: 0.75rem;
+		border: 2px solid var(--color-border-gray);
+		background: var(--color-pure-white);
+		border-radius: var(--radius-md);
+		cursor: pointer;
+		transition: all 0.3s ease;
+		font-size: 0.9rem;
+	}
+
+	.lang-option.active {
+		border-color: var(--color-mango-tango);
+		background: var(--color-mango-tango-light);
+	}
+
+	.achievement-notification {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		background: linear-gradient(135deg, var(--color-mango-tango-light), var(--color-maize-yellow-light));
+		padding: 1rem;
+		border-radius: var(--radius-lg);
+		margin-bottom: 1rem;
+	}
+
+	.achievement-icon {
+		font-size: 2rem;
+	}
+
+	.achievement-text h4 {
+		color: var(--color-prussian-blue);
+		margin: 0 0 0.25rem 0;
+		font-size: 1rem;
+	}
+
+	.achievement-text p {
+		margin: 0;
+		color: var(--color-charcoal-gray);
+		font-size: 0.9rem;
+	}
+
+	.level-info {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.level {
+		font-weight: 600;
+		color: var(--color-prussian-blue);
+	}
+
+	.xp-bar {
+		flex: 1;
+		height: 8px;
+		background: var(--color-border-gray);
+		border-radius: 4px;
+		overflow: hidden;
+	}
+
+	.xp-fill {
+		height: 100%;
+		background: linear-gradient(90deg, var(--color-mango-tango), var(--color-maize-yellow));
+		transition: width 0.3s ease;
+	}
+
+	.xp-text {
+		font-size: 0.9rem;
+		color: var(--color-slate-gray);
+	}
+
+	/* Early Feedback Section */
+	.early-feedback-section {
+		padding: 6rem 0;
+		background: var(--color-pure-white);
+	}
+
+	.testimonials-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		gap: 3rem;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.testimonial-card {
+		background: var(--color-off-white);
+		border-radius: var(--radius-2xl);
+		padding: 3rem;
+		position: relative;
+		box-shadow: var(--shadow-lg);
+		border: 1px solid var(--color-border-gray);
+		transition: all 0.3s ease;
+	}
+
+	.testimonial-card:hover {
+		transform: translateY(-8px);
+		box-shadow: var(--shadow-xl);
+	}
+
+	.testimonial-content {
+		position: relative;
+	}
+
+	.quote-icon {
+		position: absolute;
+		top: -1rem;
+		left: -1rem;
+		font-size: 4rem;
+		color: var(--color-mango-tango);
+		font-family: 'Georgia', serif;
+		line-height: 1;
+		opacity: 0.3;
+	}
+
+	.testimonial-quote {
+		font-size: 1.25rem;
+		font-style: italic;
+		color: var(--color-charcoal-gray);
+		line-height: 1.6;
+		margin: 0 0 2rem 0;
+		font-family: 'Georgia', serif;
+		position: relative;
+		z-index: 2;
+	}
+
+	.testimonial-author {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-top: 2rem;
+	}
+
+	.author-avatar {
+		width: 3.5rem;
+		height: 3.5rem;
+		border-radius: 50%;
+		background: linear-gradient(135deg, var(--color-mango-tango-light), var(--color-maize-yellow-light));
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		box-shadow: var(--shadow-md);
+	}
+
+	.avatar-placeholder {
+		font-size: 1.75rem;
+	}
+
+	.author-info {
+		flex: 1;
+	}
+
+	.author-name {
+		font-size: 1.125rem;
+		font-weight: 600;
+		color: var(--color-prussian-blue);
+		font-style: normal;
+		display: block;
+		margin-bottom: 0.25rem;
+	}
+
+	.author-role {
+		font-size: 0.95rem;
+		color: var(--color-slate-gray);
+		margin: 0;
+		font-weight: 500;
+	}
+
+	/* What's Coming Soon Section */
+	.coming-soon-section {
+		padding: 6rem 0;
+		background: linear-gradient(135deg, var(--color-off-white) 0%, #f0f9ff 100%);
+	}
+
+	.coming-soon-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.coming-soon-card {
+		background: var(--color-pure-white);
+		border-radius: var(--radius-2xl);
+		padding: 2.5rem 2rem;
+		text-align: center;
+		position: relative;
+		box-shadow: var(--shadow-lg);
+		border: 1px solid var(--color-border-gray);
+		transition: all 0.3s ease;
+		overflow: hidden;
+	}
+
+	.coming-soon-card:hover {
+		transform: translateY(-8px);
+		box-shadow: var(--shadow-xl);
+	}
+
+	.coming-soon-card.featured {
+		border: 2px solid var(--color-mango-tango);
+		background: linear-gradient(135deg, rgba(255, 130, 67, 0.02), rgba(242, 199, 68, 0.02));
+	}
+
+	.coming-soon-badge {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		background: var(--color-slate-gray);
+		color: var(--color-pure-white);
+		padding: 0.25rem 0.75rem;
+		border-radius: var(--radius-md);
+		font-size: 0.75rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.coming-soon-badge.premium {
+		background: linear-gradient(135deg, var(--color-mango-tango), var(--color-maize-yellow));
+		color: var(--color-pure-white);
+	}
+
+	.feature-icon-large {
+		font-size: 4rem;
+		margin-bottom: 1.5rem;
+		display: block;
+	}
+
+	.coming-soon-title {
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: var(--color-prussian-blue);
+		margin-bottom: 1rem;
+		font-family: 'Poppins', sans-serif;
+	}
+
+	.coming-soon-description {
+		color: var(--color-charcoal-gray);
+		line-height: 1.6;
+		margin-bottom: 1rem;
+		font-size: 1rem;
+	}
+
+	.coming-soon-highlight {
+		color: var(--color-mango-tango);
+		font-weight: 600;
+		font-style: italic;
+		font-size: 0.95rem;
+	}
+
+	/* Pricing Section */
+	.pricing-preview-section {
+		padding: 6rem 0;
+		background: var(--color-pure-white);
+	}
+
+	.pricing-table-wrapper {
+		overflow-x: auto;
+		margin-bottom: 2rem;
+	}
+
+	.pricing-table {
+		width: 100%;
+		border-collapse: collapse;
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		box-shadow: var(--shadow-lg);
+	}
+
+	.pricing-header th {
+		background: var(--color-off-white);
+		padding: 2rem 1.5rem;
+		text-align: center;
+		border-bottom: 2px solid var(--color-border-gray);
+	}
+
+	.premium-column {
+		background: linear-gradient(135deg, var(--color-mango-tango-light), var(--color-maize-yellow-light)) !important;
+		position: relative;
+	}
+
+	.popular-badge {
+		position: absolute;
+		top: 0.5rem;
+		left: 50%;
+		transform: translateX(-50%);
+		background: var(--color-mango-tango);
+		color: var(--color-pure-white);
+		padding: 0.25rem 0.75rem;
+		border-radius: var(--radius-md);
+		font-size: 0.75rem;
+		font-weight: 600;
+	}
+
+	.plan-name {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: var(--color-prussian-blue);
+		margin: 0.5rem 0;
+	}
+
+	.plan-price {
+		font-size: 2rem;
+		font-weight: 700;
+		color: var(--color-mango-tango);
+		margin: 0.5rem 0;
+	}
+
+	.price-period {
+		font-size: 1rem;
+		color: var(--color-text-muted);
+		font-weight: 400;
+	}
+
+	.plan-description {
+		color: var(--color-slate-gray);
+		font-size: 0.9rem;
+		margin: 0;
+	}
+
+	.feature-row td {
+		padding: 1rem 1.5rem;
+		border-bottom: 1px solid var(--color-border-gray);
+		text-align: center;
+	}
+
+	.feature-row:nth-child(even) {
+		background: var(--color-off-white);
+	}
+
+	.feature-name {
+		text-align: left !important;
+		font-weight: 500;
+		color: var(--color-charcoal-gray);
+	}
+
+	.premium-value {
+		background: rgba(255, 130, 67, 0.1);
+		font-weight: 600;
+		color: var(--color-mango-tango);
+	}
+
+	.checkmark, .unavailable {
+		font-size: 1.25rem;
+		font-weight: bold;
+	}
+
+	.checkmark {
+		color: var(--color-mango-tango);
+	}
+
+	.unavailable {
+		color: var(--color-slate-gray);
+	}
+
+	.pricing-actions {
+		text-align: center;
+		margin-top: 2rem;
+	}
+
+	.action-buttons {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.view-full-comparison {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		background: none;
+		border: 2px solid var(--color-mango-tango);
+		color: var(--color-mango-tango);
+		padding: 0.75rem 1.5rem;
+		border-radius: var(--radius-lg);
+		cursor: pointer;
+		transition: all 0.3s ease;
+		font-weight: 500;
+		margin: 2rem auto 0;
+	}
+
+	.view-full-comparison:hover {
+		background: var(--color-mango-tango);
+		color: var(--color-pure-white);
+		transform: translateY(-2px);
+	}
+
+	/* Modal */
+	.pricing-modal {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem;
+	}
+
+	.modal-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.7);
+		backdrop-filter: blur(4px);
+	}
+
+	.modal-content {
+		background: var(--color-pure-white);
+		border-radius: var(--radius-2xl);
+		max-width: 90vw;
+		max-height: 90vh;
+		overflow: hidden;
+		position: relative;
+		z-index: 1001;
+		box-shadow: var(--shadow-xl);
+	}
+
+	.modal-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 2rem;
+		border-bottom: 1px solid var(--color-border-gray);
+	}
+
+	.modal-title {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: var(--color-prussian-blue);
+		margin: 0;
+	}
+
+	.modal-close {
+		background: none;
+		border: none;
+		font-size: 1.5rem;
+		cursor: pointer;
+		padding: 0.5rem;
+		color: var(--color-text-muted);
+		border-radius: var(--radius-md);
+		transition: all 0.3s ease;
+	}
+
+	.modal-close:hover {
+		background: var(--color-off-white);
+		color: var(--color-charcoal-gray);
+	}
+
+	.modal-body {
+		padding: 2rem;
+		overflow-y: auto;
+		max-height: 60vh;
+	}
+
+	.detailed-table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	.category-header td {
+		background: var(--color-off-white);
+		font-weight: 600;
+		padding: 1rem;
+		color: var(--color-prussian-blue);
+	}
+
+	.detail-row td {
+		padding: 0.75rem 1rem;
+		border-bottom: 1px solid var(--color-border-gray);
+	}
+
+	.detail-row.alt {
+		background: var(--color-off-white);
+	}
+
+	.premium-cell {
+		background: rgba(255, 130, 67, 0.1);
+		font-weight: 600;
+		color: var(--color-mango-tango);
+	}
+
+	.what-best-section {
+		margin-top: 2rem;
+		padding: 2rem;
+		background: var(--color-off-white);
+		border-radius: var(--radius-xl);
+	}
+
+	.best-title {
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: var(--color-prussian-blue);
+		margin-bottom: 1.5rem;
+		text-align: center;
+	}
+
+	.recommendation-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5rem;
+	}
+
+	.recommendation-item {
+		display: flex;
+		align-items: flex-start;
+		gap: 1rem;
+		padding: 1rem;
+		background: var(--color-pure-white);
+		border-radius: var(--radius-lg);
+		border: 1px solid var(--color-border-gray);
+	}
+
+	.rec-icon {
+		font-size: 2rem;
+		flex-shrink: 0;
+	}
+
+	.rec-content {
+		font-size: 0.95rem;
+		line-height: 1.5;
+		color: var(--color-charcoal-gray);
+	}
+
+	.modal-actions {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	@media (max-width: 768px) {
+		.recommendation-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.modal-actions {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.modal-actions .btn {
+			width: 100%;
+			max-width: 300px;
+		}
+	}
+
+	/* Founding Supporter Section */
+	.founding-supporter-section {
+		padding: 6rem 0;
+		background: linear-gradient(135deg, var(--color-off-white) 0%, #f0f9ff 100%);
+		position: relative;
+	}
+
+	.founder-title {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: var(--color-prussian-blue);
+		margin: 1rem 0;
+	}
+
+	.founder-subtitle {
+		font-size: 1.125rem;
+		color: var(--color-slate-gray);
+		margin-bottom: 3rem;
+	}
+
+	.highlight-number {
+		color: var(--color-mango-tango);
+		font-weight: 700;
+	}
+
+	.supporter-offer-card {
+		max-width: 600px;
+		margin: 0 auto;
+		background: var(--color-pure-white);
+		border-radius: var(--radius-2xl);
+		padding: 3rem;
+		box-shadow: var(--shadow-xl);
+		border: 2px solid var(--color-mango-tango);
+		text-align: center;
+	}
+
+	.offer-title {
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: var(--color-prussian-blue);
+		margin-bottom: 2rem;
+	}
+
+	.benefits-list-simple {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		margin-bottom: 2.5rem;
+	}
+
+	.benefit-item-simple {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 0.75rem;
+		background: var(--color-off-white);
+		border-radius: var(--radius-lg);
+		text-align: left;
+	}
+
+	.benefit-check {
+		font-size: 1.5rem;
+		flex-shrink: 0;
+	}
+
+	.benefit-text {
+		font-size: 1.125rem;
+		font-weight: 500;
+		color: var(--color-charcoal-gray);
+	}
+
+	.payment-section {
+		border-top: 1px solid var(--color-border-gray);
+		padding-top: 2rem;
+	}
+
+	.payment-title {
+		font-size: 1.125rem;
+		font-weight: 600;
+		color: var(--color-prussian-blue);
+		margin-bottom: 1.5rem;
+	}
+
+	.payment-methods {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+		gap: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	.payment-method {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 1rem;
+		border: 2px solid var(--color-border-gray);
+		background: var(--color-pure-white);
+		border-radius: var(--radius-lg);
+		cursor: pointer;
+		transition: all 0.3s ease;
+		font-family: inherit;
+	}
+
+	.payment-method:hover {
+		border-color: var(--color-mango-tango);
+		background: var(--color-mango-tango-light);
+		transform: translateY(-2px);
+	}
+
+	.payment-method.selected {
+		border-color: var(--color-mango-tango);
+		background: var(--color-mango-tango-light);
+	}
+
+	.payment-icon {
+		font-size: 1.5rem;
+	}
+
+	.payment-name {
+		font-size: 0.9rem;
+		font-weight: 500;
+		color: var(--color-charcoal-gray);
+	}
+
+	.waitlist-option {
+		margin: 2rem 0;
+	}
+
+	.checkbox-container {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		cursor: pointer;
+		font-size: 1rem;
+		color: var(--color-charcoal-gray);
+	}
+
+	.checkbox-container input[type="checkbox"] {
+		display: none;
+	}
+
+	.checkmark-custom {
+		font-size: 1.25rem;
+		color: var(--color-mango-tango);
+		transition: all 0.3s ease;
+	}
+
+	.checkbox-container input[type="checkbox"]:not(:checked) + .checkmark-custom {
+		opacity: 0.3;
+	}
+
+	.checkbox-label {
+		font-weight: 500;
+	}
+
+	.supporter-cta {
+		margin-top: 2rem;
+	}
+
+	.btn-supporter {
+		background: linear-gradient(135deg, var(--color-mango-tango), var(--color-maize-yellow));
+		color: var(--color-pure-white);
+		padding: 1.25rem 2.5rem;
+		border-radius: var(--radius-2xl);
+		border: none;
+		cursor: pointer;
+		font-family: 'Poppins', sans-serif;
+		font-weight: 600;
+		font-size: 1.125rem;
+		transition: all 0.3s ease;
+		box-shadow: var(--shadow-lg);
+	}
+
+	.btn-supporter:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 15px 30px rgba(255, 130, 67, 0.3);
+	}
+
+	/* Contact Section */
+	.contact-section {
+		padding: 6rem 0;
+		background: var(--color-pure-white);
+	}
+
+	.contact-content {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.contact-info {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.contact-item {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+		padding: 2rem;
+		background: var(--color-off-white);
+		border-radius: var(--radius-xl);
+		box-shadow: var(--shadow-md);
+	}
+
+	.contact-icon {
+		font-size: 2rem;
+		width: 4rem;
+		height: 4rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: linear-gradient(135deg, var(--color-mango-tango-light), var(--color-maize-yellow-light));
+		border-radius: 50%;
+	}
+
+	.contact-details h3 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: var(--color-prussian-blue);
+		margin-bottom: 0.5rem;
+	}
+
+	.contact-details p {
+		color: var(--color-slate-gray);
+		margin: 0;
+	}
+
+	/* Early Access Section */
+	.early-access-section {
+		padding: 6rem 0;
+		background: linear-gradient(135deg, var(--color-off-white) 0%, #f0f9ff 100%);
+	}
+
+	.early-access-form-container {
+		max-width: 700px;
+		margin: 0 auto;
+		background: var(--color-pure-white);
+		border-radius: var(--radius-2xl);
+		padding: 3rem;
+		box-shadow: var(--shadow-xl);
+		border: 1px solid var(--color-border-gray);
+	}
+
+	.early-access-form {
+		width: 100%;
+	}
+
+	.form-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.form-group {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.form-group.full-width {
+		grid-column: 1 / -1;
+	}
+
+	.form-label {
+		font-weight: 600;
+		color: var(--color-prussian-blue);
+		margin-bottom: 0.5rem;
+		font-size: 0.95rem;
+	}
+
+	.optional {
+		font-weight: 400;
+		color: var(--color-slate-gray);
+		font-size: 0.85rem;
+	}
+
+	.form-input,
+	.form-select {
+		padding: 0.75rem 1rem;
+		border: 2px solid var(--color-border-gray);
+		border-radius: var(--radius-lg);
+		font-size: 1rem;
+		transition: all 0.3s ease;
+		background: var(--color-pure-white);
+		color: var(--color-charcoal-gray);
+	}
+
+	.form-input:focus,
+	.form-select:focus {
+		outline: none;
+		border-color: var(--color-mango-tango);
+		box-shadow: 0 0 0 3px rgba(255, 130, 67, 0.1);
+	}
+
+	.form-input::placeholder {
+		color: var(--color-slate-gray);
+	}
+
+	.form-select {
+		cursor: pointer;
+	}
+
+	.form-select option {
+		padding: 0.5rem;
+	}
+
+	.form-actions {
+		text-align: center;
+	}
+
+	.btn-large {
+		padding: 1rem 2.5rem;
+		font-size: 1.125rem;
+		font-weight: 600;
+		min-width: 200px;
+	}
+
+	/* Animations */
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		.hero-split-background {
+			flex-direction: column;
+		}
+		.hero-background-half {
+			width: 100%;
+			height: 50%;
+		}
+		.hero-overlay {
+			padding-top: 6rem; /* Smaller top padding for mobile */
+		}
+		.hero-content-center {
+			padding: 0 1rem;
+		}
+		.background-label {
+			top: 1rem;
+			left: 1rem;
+			font-size: 0.75rem;
+			padding: 0.375rem 0.75rem;
+		}
+
+		.hero-welcome {
+			font-size: 1rem;
+		}
+
+		.hero-title {
+			font-size: 2.5rem;
+		}
+
+		.hero-subheadline {
+			font-size: 1.125rem;
+		}
+
+		.feature-item {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+			text-align: center;
+		}
+
+		.feature-item.reverse {
+			direction: ltr;
+		}
+
+		.feature-content {
+			justify-content: center;
+		}
+
+		.transformation-grid {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+
+		.cta-buttons {
+			flex-direction: column;
+		}
+
+		.urgency-indicators {
+			flex-direction: column;
+			gap: 1rem;
+		}
+
+		.target-groups-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.testimonials-grid {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.testimonial-card {
+			padding: 2rem;
+		}
+
+		.testimonial-quote {
+			font-size: 1.125rem;
+		}
+
+		.coming-soon-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.coming-soon-card {
+			padding: 2rem 1.5rem;
+		}
+
+		.form-grid {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+
+		.early-access-form-container {
+			padding: 2rem;
+		}
+
+		.supporter-offer-card {
+			padding: 2rem;
+		}
+
+		.payment-methods {
+			grid-template-columns: 1fr;
+		}
+
+		.why-duahtor-headline {
+			font-size: 2rem;
+		}
+
+		.why-duahtor-description {
+			font-size: 1.125rem;
+		}
+
+		.section-headline {
+			font-size: 1.5rem;
+		}
+
+		.supporter-offer-card {
+			padding: 1.5rem;
+		}
+
+		.founder-title {
+			font-size: 2rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero-welcome {
+			font-size: 0.9rem;
+		}
+
+		.hero-title {
+			font-size: 2rem;
+		}
+
+		.hero-subheadline {
+			font-size: 1rem;
+		}
+
+		.why-duahtor-headline {
+			font-size: 1.75rem;
+		}
+
+		.why-duahtor-description {
+			font-size: 1rem;
+		}
+
+		.section-headline {
+			font-size: 1.25rem;
+		}
+
+		.feature-title {
+			font-size: 1.5rem;
+		}
+
+		.feature-description {
+			font-size: 1rem;
+		}
+
+		.testimonial-card {
+			padding: 1.5rem;
+		}
+
+		.testimonial-quote {
+			font-size: 1rem;
+		}
+
+		.quote-icon {
+			font-size: 3rem;
+		}
+
+		.coming-soon-card {
+			padding: 1.5rem;
+		}
+
+		.feature-icon-large {
+			font-size: 3rem;
+		}
+
+		.coming-soon-title {
+			font-size: 1.25rem;
+		}
+
+		.early-access-form-container {
+			padding: 1.5rem;
+		}
+
+		.btn-large {
+			width: 100%;
+			padding: 1rem;
+		}
+
+		.section-title {
+			font-size: 2rem;
+		}
+	}
+</style>
+
+<script>
+	// Features section scroll animations (optional enhancement)
+	function initializeFeatureAnimations() {
+		const featureItems = document.querySelectorAll('.feature-item');
+		
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.style.opacity = '1';
+					entry.target.style.transform = 'translateY(0)';
+				}
+			});
+		}, { threshold: 0.1 });
+
+		featureItems.forEach(item => {
+			item.style.opacity = '0';
+			item.style.transform = 'translateY(20px)';
+			item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+			observer.observe(item);
+		});
+	}
+
+	// Pricing modal functionality
+	function openPricingModal() {
+		const modal = document.getElementById('pricing-modal');
+		if (modal) {
+			modal.style.display = 'flex';
+			modal.style.opacity = '1';
+			document.body.style.overflow = 'hidden';
+			
+			// Focus management
+			const closeButton = modal.querySelector('.modal-close');
+			if (closeButton) {
+				closeButton.focus();
+			}
+		}
+	}
+
+	function closePricingModal() {
+		const modal = document.getElementById('pricing-modal');
+		if (modal) {
+			modal.style.opacity = '0';
+			setTimeout(() => {
+				modal.style.display = 'none';
+				document.body.style.overflow = 'auto';
+			}, 300);
+		}
+	}
+
+	// Keyboard event handling for modal
+	function handleKeyPress(event) {
+		if (event.key === 'Escape') {
+			const modal = document.getElementById('pricing-modal');
+			if (modal && modal.style.display === 'flex') {
+				closePricingModal();
+			}
+		}
+	}
+
+	// Waitlist form handling
+	function handleWaitlistForm(event) {
+		event.preventDefault();
+		
+		const form = event.target;
+		const formData = new FormData(form);
+		const submitButton = form.querySelector('button[type="submit"]');
+		
+		// Disable button and show loading state
+		submitButton.disabled = true;
+		submitButton.textContent = 'Joining...';
+		
+		// In a real implementation, you would send this data to your backend
+		console.log('Waitlist form data:', Object.fromEntries(formData));
+		
+		// Simulate API call
+		setTimeout(() => {
+			submitButton.textContent = '✅ Successfully Joined!';
+			submitButton.style.background = 'var(--color-mango-tango)';
+			
+			// Reset after 3 seconds
+			setTimeout(() => {
+				submitButton.disabled = false;
+				submitButton.textContent = '🔘 Join the Waitlist';
+				submitButton.style.background = '';
+				form.reset();
+			}, 3000);
+		}, 1000);
+	}
+
+	// Payment method selection
+	function initializePaymentMethods() {
+		const paymentMethods = document.querySelectorAll('.payment-method');
+		let selectedMethod = null;
+
+		paymentMethods.forEach(method => {
+			method.addEventListener('click', () => {
+				// Remove selected class from all methods
+				paymentMethods.forEach(m => m.classList.remove('selected'));
+				
+				// Add selected class to clicked method
+				method.classList.add('selected');
+				selectedMethod = method.getAttribute('data-method');
+				
+				// Update supporter button text based on selection
+				const supporterBtn = document.getElementById('become-supporter-btn');
+				if (supporterBtn) {
+					const methodName = method.querySelector('.payment-name').textContent;
+					supporterBtn.textContent = `🔘 Pay with ${methodName}`;
+				}
+			});
+		});
+
+		// Handle supporter button click
+		const supporterBtn = document.getElementById('become-supporter-btn');
+		if (supporterBtn) {
+			supporterBtn.addEventListener('click', () => {
+				if (!selectedMethod) {
+					alert('Please select a payment method first.');
+					return;
+				}
+
+				const joinWaitlist = document.getElementById('join-waitlist-checkbox').checked;
+				
+				// In a real implementation, you would integrate with payment providers
+				console.log('Payment initiated:', {
+					method: selectedMethod,
+					amount: 29,
+					currency: 'USD',
+					joinWaitlist: joinWaitlist
+				});
+
+				// Simulate payment process
+				supporterBtn.disabled = true;
+				supporterBtn.textContent = 'Processing Payment...';
+				
+				setTimeout(() => {
+					supporterBtn.textContent = '✅ Thank You, Founding Supporter!';
+					supporterBtn.style.background = 'var(--color-mango-tango)';
+				}, 2000);
+			});
+		}
+	}
+
+	// Initialize all functionality when DOM is loaded
+	document.addEventListener('DOMContentLoaded', function() {
+		initializeFeatureAnimations();
+		initializePaymentMethods();
+		
+		// Add escape key listener for modal
+		document.addEventListener('keydown', handleKeyPress);
+		
+		// Initialize modal opacity
+		const modal = document.getElementById('pricing-modal');
+		if (modal) {
+			modal.style.opacity = '0';
+			modal.style.transition = 'opacity 0.3s ease';
+		}
+
+		// Initialize waitlist form
+		const waitlistForm = document.getElementById('waitlist-form');
+		if (waitlistForm) {
+			waitlistForm.addEventListener('submit', handleWaitlistForm);
+		}
+	});
+
+	// Make functions globally available
+	window.openPricingModal = openPricingModal;
+	window.closePricingModal = closePricingModal;
+</script>

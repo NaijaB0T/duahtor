@@ -3,83 +3,412 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
+<nav id="main-nav" class="nav-initial fixed top-0 w-full z-50 transition-all duration-300">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="flex items-center justify-between h-16 lg:h-20">
+			<!-- Logo -->
+			<div class="flex-shrink-0">
+				<a href="/" class="logo-link">
+					<span class="font-heading font-bold text-2xl lg:text-3xl">
+						<span class="text-primary">DUAH</span><span class="text-accent">TOR</span>
+					</span>
+				</a>
+			</div>
+
+			<!-- Desktop Navigation - Centered -->
+			<div class="hidden md:flex flex-1 justify-center">
+				<div class="flex items-baseline space-x-6">
+					<HeaderLink href="/" class="nav-link">Home</HeaderLink>
+					<a href="#how-it-works" class="nav-link">How It Works</a>
+					<a href="#who-its-for" class="nav-link">Who It's For</a>
+					<a href="#features" class="nav-link">Features</a>
+					<a href="#waitlist" class="nav-link">Join Waitlist</a>
+					<HeaderLink href="/about" class="nav-link">Our Story</HeaderLink>
+					<a href="#contact" class="nav-link">Contact</a>
+				</div>
+			</div>
+
+			<!-- CTA Button -->
+			<div class="hidden md:block flex-shrink-0">
+				<a href="#waitlist" class="btn btn-primary btn-compact">
+					Join the Waitlist
+				</a>
+			</div>
+
+			<!-- Mobile menu button -->
+			<div class="md:hidden">
+				<button 
+					id="mobile-menu-button" 
+					type="button" 
+					class="mobile-menu-btn"
+					aria-expanded="false"
+					aria-controls="mobile-menu"
+					aria-label="Toggle navigation menu"
+				>
+					<span class="sr-only">Open main menu</span>
+					<div class="hamburger-icon">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</button>
+			</div>
 		</div>
-		<div class="social-links">
-			<a href="https://m.webtoo.ls/@astro" target="_blank">
-				<span class="sr-only">Follow Astro on Mastodon</span>
-				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-					><path
-						fill="currentColor"
-						d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"
-					></path></svg
-				>
-			</a>
-			<a href="https://twitter.com/astrodotbuild" target="_blank">
-				<span class="sr-only">Follow Astro on Twitter</span>
-				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-					><path
-						fill="currentColor"
-						d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
-					></path></svg
-				>
-			</a>
-			<a href="https://github.com/withastro/astro" target="_blank">
-				<span class="sr-only">Go to Astro's GitHub repo</span>
-				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-					><path
-						fill="currentColor"
-						d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-					></path></svg
-				>
-			</a>
+	</div>
+
+	<!-- Mobile Navigation Menu -->
+	<div 
+		id="mobile-menu" 
+		class="md:hidden mobile-menu-hidden"
+		role="navigation"
+		aria-label="Mobile navigation"
+	>
+		<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-md border-t border-gray-200">
+			<HeaderLink href="/" class="mobile-nav-link">Home</HeaderLink>
+			<a href="#how-it-works" class="mobile-nav-link">How It Works</a>
+			<a href="#who-its-for" class="mobile-nav-link">Who It's For</a>
+			<a href="#features" class="mobile-nav-link">Features</a>
+			<a href="#waitlist" class="mobile-nav-link">Join Waitlist</a>
+			<HeaderLink href="/about" class="mobile-nav-link">Our Story</HeaderLink>
+			<a href="#contact" class="mobile-nav-link">Contact</a>
+			<div class="pt-4">
+				<a href="#waitlist" class="btn btn-primary w-full text-center">
+					Join the Waitlist
+				</a>
+			</div>
 		</div>
-	</nav>
-</header>
+	</div>
+</nav>
 <style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
+	/* Navigation Initial State (Transparent) */
+	.nav-initial {
+		background: transparent;
+		backdrop-filter: none;
+		border-bottom: none;
 	}
 
-	h2 a,
-	h2 a.active {
+	/* Navigation Scrolled State (Glassmorphism) */
+	.nav-scrolled {
+		backdrop-filter: blur(16px);
+		background: rgba(255, 255, 255, 0.85);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+		box-shadow: var(--shadow-lg);
+	}
+
+	/* Logo Styles */
+	.logo-link {
 		text-decoration: none;
+		transition: all 0.3s ease;
 	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+
+	.logo-link:hover {
+		transform: scale(1.05);
 	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
+
+	/* Navigation Links - Updated for accessible colors */
+	nav .nav-link,
+	nav a.nav-link {
+		color: var(--color-charcoal-gray) !important;
+		text-decoration: none !important;
+		font-weight: 500 !important;
+		font-size: 0.875rem !important;
+		padding: 0.5rem 0 !important;
+		position: relative !important;
+		transition: all 0.3s ease !important;
+		display: inline-block !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+	}
+
+	nav .nav-link:hover,
+	nav a.nav-link:hover {
+		color: var(--color-prussian-blue) !important;
+		text-decoration: none !important;
+	}
+
+	/* Active link underline effect */
+	nav .nav-link::after,
+	nav a.nav-link::after {
+		content: '' !important;
+		position: absolute !important;
+		bottom: -2px !important;
+		left: 0 !important;
+		width: 0 !important;
+		height: 2px !important;
+		background-color: var(--color-mango-tango) !important;
+		transition: width 0.3s ease !important;
+	}
+
+	nav .nav-link:hover::after,
+	nav .nav-link.active::after,
+	nav a.nav-link:hover::after,
+	nav a.nav-link.active::after {
+		width: 100% !important;
+	}
+
+	/* Mobile Menu Button */
+	.mobile-menu-btn {
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0.5rem;
+	}
+
+	/* Hamburger Icon */
+	.hamburger-icon {
+		width: 24px;
+		height: 18px;
+		position: relative;
+		cursor: pointer;
+	}
+
+	.hamburger-icon span {
+		display: block;
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		background: var(--color-charcoal-gray);
+		border-radius: 1px;
+		opacity: 1;
+		transition: all 0.25s ease-in-out;
+	}
+
+	.hamburger-icon span:nth-child(1) {
+		top: 0px;
+	}
+
+	.hamburger-icon span:nth-child(2) {
+		top: 8px;
+	}
+
+	.hamburger-icon span:nth-child(3) {
+		top: 16px;
+	}
+
+	/* Mobile Menu */
+	.mobile-menu-hidden {
+		display: none;
+	}
+
+	.mobile-menu-visible {
+		display: block;
+	}
+
+	.mobile-nav-link {
+		display: block;
+		color: var(--color-charcoal-gray) !important;
 		text-decoration: none;
+		font-weight: 500;
+		padding: 0.75rem 1rem;
+		border-radius: 0.75rem;
+		transition: all 0.3s ease;
 	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
+
+	.mobile-nav-link:hover {
+		background-color: var(--color-off-white);
+		color: var(--color-prussian-blue) !important;
 	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
+
+	/* Responsive adjustments for different nav states */
+	@media (max-width: 767px) {
+		.nav-scrolled {
+			background: rgba(255, 255, 255, 0.95);
 		}
 	}
+
+	/* Mobile First Responsive Navigation */
+	
+	/* Mobile (up to 640px) */
+	@media (max-width: 639px) {
+		.h-16 { height: 3.5rem; }
+		.px-4 { padding-left: 0.75rem; padding-right: 0.75rem; }
+		.text-2xl { font-size: 1.125rem; }
+		
+		.mobile-menu-btn {
+			min-width: 44px;
+			min-height: 44px;
+		}
+		
+		.btn {
+			min-height: 44px;
+			padding: 0.75rem 1rem;
+			font-size: 0.875rem;
+		}
+
+		.mobile-nav-link {
+			min-height: 44px;
+			padding: 0.875rem 1rem;
+		}
+	}
+
+	/* Small devices (640px and up) */
+	@media (min-width: 640px) {
+		.sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+		.sm\:px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+		.h-16 { height: 4rem; }
+		.text-2xl { font-size: 1.25rem; }
+	}
+
+	/* Medium devices (768px and up) */
+	@media (min-width: 768px) {
+		.md\:block { display: block !important; }
+		.md\:flex { display: flex !important; }
+		.md\:hidden { display: none !important; }
+		.text-2xl { font-size: 1.5rem; }
+		
+		/* Ensure desktop navigation is visible */
+		nav .hidden.md\:block,
+		nav .hidden.md\:flex {
+			display: flex !important;
+			visibility: visible !important;
+			opacity: 1 !important;
+		}
+		
+		/* Force desktop nav links to be visible */
+		nav .hidden.md\:block .nav-link,
+		nav .hidden.md\:block a.nav-link,
+		nav .hidden.md\:flex .nav-link,
+		nav .hidden.md\:flex a.nav-link {
+			color: var(--color-charcoal-gray) !important;
+			display: inline-block !important;
+			visibility: visible !important;
+			opacity: 1 !important;
+		}
+	}
+
+	/* Large devices (1024px and up) */
+	@media (min-width: 1024px) {
+		.lg\:h-20 { height: 5rem; }
+		.lg\:text-3xl { font-size: 1.875rem; }
+		.lg\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+	}
+
+	/* Utility classes for Tailwind-like functionality */
+	.fixed { position: fixed; }
+	.top-0 { top: 0; }
+	.w-full { width: 100%; }
+	.z-50 { z-index: 50; }
+	.max-w-7xl { max-width: 80rem; }
+	.mx-auto { margin-left: auto; margin-right: auto; }
+	.px-4 { padding-left: 1rem; padding-right: 1rem; }
+	.px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+	.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+	.pt-2 { padding-top: 0.5rem; }
+	.pt-4 { padding-top: 1rem; }
+	.pb-3 { padding-bottom: 0.75rem; }
+	.flex { display: flex; }
+	.hidden { display: none !important; }
+	.items-center { align-items: center; }
+	.items-baseline { align-items: baseline; }
+	.justify-between { justify-content: space-between; }
+	.flex-shrink-0 { flex-shrink: 0; }
+	.space-x-8 > * + * { margin-left: 2rem; }
+	.space-x-6 > * + * { margin-left: 1.5rem; }
+	.flex-1 { flex: 1; }
+	.justify-center { justify-content: center; }
+	.flex-shrink-0 { flex-shrink: 0; }
+	
+	/* Compact button for header */
+	.btn-compact {
+		padding: 0.5rem 1rem !important;
+		font-size: 0.875rem !important;
+		font-weight: 500 !important;
+	}
+	.space-y-1 > * + * { margin-top: 0.25rem; }
+	.ml-10 { margin-left: 2.5rem; }
+	.text-center { text-align: center; }
+	.font-bold { font-weight: 700; }
+	.transition-all { transition-property: all; }
+	.duration-300 { transition-duration: 300ms; }
+	.border-t { border-top-width: 1px; }
+	.border-gray-200 { border-color: #e5e7eb; }
+	.backdrop-blur-md { backdrop-filter: blur(12px); }
 </style>
+
+<script>
+	// Navigation scroll effect
+	function handleNavScroll() {
+		const nav = document.getElementById('main-nav');
+		if (!nav) return;
+
+		if (window.scrollY > 50) {
+			nav.classList.remove('nav-initial');
+			nav.classList.add('nav-scrolled');
+		} else {
+			nav.classList.remove('nav-scrolled');
+			nav.classList.add('nav-initial');
+		}
+	}
+
+	// Mobile menu toggle
+	function toggleMobileMenu() {
+		const mobileMenu = document.getElementById('mobile-menu');
+		const menuButton = document.getElementById('mobile-menu-button');
+		
+		if (!mobileMenu || !menuButton) return;
+
+		const isHidden = mobileMenu.classList.contains('mobile-menu-hidden');
+		
+		if (isHidden) {
+			mobileMenu.classList.remove('mobile-menu-hidden');
+			mobileMenu.classList.add('mobile-menu-visible');
+			menuButton.setAttribute('aria-expanded', 'true');
+			menuButton.querySelector('.sr-only').textContent = 'Close main menu';
+		} else {
+			mobileMenu.classList.remove('mobile-menu-visible');
+			mobileMenu.classList.add('mobile-menu-hidden');
+			menuButton.setAttribute('aria-expanded', 'false');
+			menuButton.querySelector('.sr-only').textContent = 'Open main menu';
+		}
+	}
+
+	// Handle keyboard events for accessibility
+	function handleKeyPress(event) {
+		if (event.key === 'Escape') {
+			const mobileMenu = document.getElementById('mobile-menu');
+			const menuButton = document.getElementById('mobile-menu-button');
+			
+			if (mobileMenu && !mobileMenu.classList.contains('mobile-menu-hidden')) {
+				mobileMenu.classList.remove('mobile-menu-visible');
+				mobileMenu.classList.add('mobile-menu-hidden');
+				if (menuButton) {
+					menuButton.setAttribute('aria-expanded', 'false');
+					menuButton.querySelector('.sr-only').textContent = 'Open main menu';
+					menuButton.focus();
+				}
+			}
+		}
+	}
+
+	// Initialize event listeners
+	document.addEventListener('DOMContentLoaded', function() {
+		// Scroll event listener
+		window.addEventListener('scroll', handleNavScroll);
+		
+		// Keyboard event listener
+		document.addEventListener('keydown', handleKeyPress);
+		
+		// Mobile menu button event listener
+		const mobileMenuButton = document.getElementById('mobile-menu-button');
+		if (mobileMenuButton) {
+			mobileMenuButton.addEventListener('click', toggleMobileMenu);
+		}
+
+		// Close mobile menu when clicking on a link
+		const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+		mobileNavLinks.forEach(link => {
+			link.addEventListener('click', () => {
+				const mobileMenu = document.getElementById('mobile-menu');
+				const menuButton = document.getElementById('mobile-menu-button');
+				if (mobileMenu) {
+					mobileMenu.classList.remove('mobile-menu-visible');
+					mobileMenu.classList.add('mobile-menu-hidden');
+					if (menuButton) {
+						menuButton.setAttribute('aria-expanded', 'false');
+						menuButton.querySelector('.sr-only').textContent = 'Open main menu';
+					}
+				}
+			});
+		});
+	});
+</script>
