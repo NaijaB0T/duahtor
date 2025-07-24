@@ -55,22 +55,24 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 										Education is finally catching up to you — not the other way around.
 									</p>
 									
-									<div class="pain-points">
-										<div class="pain-point fade-in-up" style="animation-delay: 0.2s">
-											<div class="pain-icon" aria-hidden="true">🗣</div>
-											<span class="pain-text">Struggling with homework?</span>
-										</div>
-										<div class="pain-point fade-in-up" style="animation-delay: 0.4s">
-											<div class="pain-icon" aria-hidden="true">👩</div>
-											<span class="pain-text">Too many students, too few teachers?</span>
-										</div>
-										<div class="pain-point fade-in-up" style="animation-delay: 0.6s">
-											<div class="pain-icon" aria-hidden="true">📚</div>
-											<span class="pain-text">Can't afford tutoring?</span>
-										</div>
-										<div class="pain-point fade-in-up" style="animation-delay: 0.8s">
-											<div class="pain-icon" aria-hidden="true">🌐</div>
-											<span class="pain-text">No reliable internet?</span>
+									<div class="pain-points-widget">
+										<div class="pain-points-container">
+											<div class="pain-point-card fade-in-up" style="animation-delay: 0.2s">
+												<div class="pain-icon" aria-hidden="true">🗣</div>
+												<span class="pain-text">Struggling with homework?</span>
+											</div>
+											<div class="pain-point-card fade-in-up" style="animation-delay: 0.4s">
+												<div class="pain-icon" aria-hidden="true">👩</div>
+												<span class="pain-text">Too many students, too few teachers?</span>
+											</div>
+											<div class="pain-point-card fade-in-up" style="animation-delay: 0.6s">
+												<div class="pain-icon" aria-hidden="true">📚</div>
+												<span class="pain-text">Can't afford tutoring?</span>
+											</div>
+											<div class="pain-point-card fade-in-up" style="animation-delay: 0.8s">
+												<div class="pain-icon" aria-hidden="true">🌐</div>
+												<span class="pain-text">No reliable internet?</span>
+											</div>
 										</div>
 									</div>
 									
@@ -83,7 +85,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 											Watch How It Works
 										</a>
 										<a href="#waitlist" class="btn btn-primary btn-hero">
-											🔘 Join the Early Access Waitlist
+											Join the Early Access Waitlist
 										</a>
 									</div>
 									
@@ -556,7 +558,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 						
 						<div class="demo-cta">
 							<button class="btn btn-primary btn-demo" id="play-demo-btn">
-								🔘 Play Full Demo
+								Play Full Demo
 							</button>
 						</div>
 					</div>
@@ -832,7 +834,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 						<div class="modal-actions">
 							<button class="btn btn-outline" onclick="closePricingModal()">🔙 Close Comparison</button>
 							<button class="btn btn-primary">🟢 Join the Waitlist for Premium</button>
-							<button class="btn btn-secondary">🔘 Become a Founding Supporter – Get 3 Months Premium Free</button>
+							<button class="btn btn-secondary">Become a Founding Supporter – Get 3 Months Premium Free</button>
 						</div>
 					</div>
 				</div>
@@ -902,7 +904,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 							
 							<div class="supporter-cta">
 								<button class="btn-supporter" id="become-supporter-btn">
-									🔘 Become a Supporter
+									Become a Supporter
 								</button>
 							</div>
 						</div>
@@ -999,7 +1001,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 							<div class="form-actions">
 								<button type="submit" class="btn btn-primary btn-large">
-									🔘 Join the Waitlist
+									Join the Waitlist
 								</button>
 							</div>
 						</form>
@@ -1058,10 +1060,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	/* Split Background */
 	.hero-split-background {
 		position: absolute;
-		top: 0;
+		top: 5rem; /* Push below header */
 		left: 0;
 		width: 100%;
-		height: 100%;
+		height: calc(100% - 5rem); /* Adjust height accordingly */
 		display: flex;
 		z-index: 1;
 	}
@@ -1080,32 +1082,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		object-position: center;
 	}
 	
-	.hero-background-before::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(0, 49, 83, 0.7); /* Blue overlay for readability */
-		z-index: 2;
-	}
-	
-	.hero-background-after::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(0, 49, 83, 0.6); /* Slightly lighter overlay */
-		z-index: 2;
-	}
+	/* Removed blue tint overlays to show natural images */
 	
 	.background-label {
 		position: absolute;
 		top: 2rem;
-		left: 2rem;
 		background: rgba(255, 255, 255, 0.9);
 		color: var(--color-charcoal-gray);
 		padding: 0.5rem 1rem;
@@ -1117,11 +1098,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	}
 	
 	.before-label {
+		left: 2rem;
 		background: rgba(255, 130, 67, 0.9);
 		color: var(--color-pure-white);
 	}
 	
 	.after-label {
+		right: 2rem; /* Move to extreme right */
 		background: rgba(34, 197, 94, 0.9);
 		color: var(--color-pure-white);
 	}
@@ -1148,11 +1131,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	.hero-welcome {
 		font-size: 1.125rem;
 		font-weight: 500;
-		color: var(--color-maize-yellow);
+		color: var(--color-maize-yellow-lighter); /* Keep yellow as accent color for good contrast */
 		margin-bottom: 1rem;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+		text-shadow: 2px 2px 4px rgba(250, 250, 250, 0.4);
 	}
 
 	.hero-title {
@@ -1163,6 +1146,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		color: var(--color-pure-white);
 		font-family: 'Poppins', sans-serif;
 		text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+	}
+	
+	.hero-title .text-gradient {
+		text-shadow: none; /* Remove shadow from gradient text */
 	}
 
 	.hero-subheadline {
@@ -1175,30 +1162,57 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 	}
 
-	.pain-points {
-		margin: 2rem 0;
+	/* Pain Points Widget */
+	.pain-points-widget {
+		margin: 2.5rem 0;
+		padding: 2rem;
+		background: rgba(255, 255, 255, 0.01);
+		backdrop-filter: blur(10px);
+		border-radius: var(--radius-2xl);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 	}
-
-	.pain-point {
+	
+	.pain-points-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5rem;
+	}
+	
+	.pain-point-card {
 		display: flex;
 		align-items: center;
-		margin-bottom: 1rem;
+		padding: 1.25rem;
+		background: rgba(255, 255, 255, 0.15);
+		border-radius: var(--radius-lg);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		backdrop-filter: blur(10px);
 		opacity: 0;
 		transform: translateY(20px);
 		animation: fadeInUp 0.6s ease-out forwards;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 	}
-
+	
+	.pain-point-card:hover {
+		background: rgba(255, 255, 255, 0.2);
+		transform: translateY(-2px);
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+	}
+	
 	.pain-icon {
-		font-size: 1.5rem;
+		font-size: 1.75rem;
 		margin-right: 1rem;
-		min-width: 2rem;
+		min-width: 2.5rem;
+		filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 	}
 
 	.pain-text {
-		font-size: 1.125rem;
+		font-size: 1rem;
 		color: var(--color-pure-white);
-		font-weight: 500;
-		text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+		font-weight: 600;
+		text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+		line-height: 1.4;
 	}
 
 	.cta-buttons {
@@ -1215,19 +1229,35 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	}
 
 	.duahtor-promise {
-		background: rgba(242, 199, 68, 0.15);
-		border-left: 4px solid var(--color-maize-yellow);
-		padding: 1rem 1.5rem;
-		margin: 2rem 0;
-		border-radius: var(--radius-md);
-		backdrop-filter: blur(8px);
+		background: rgba(242, 199, 68, 0.2);
+		border: 2px solid var(--color-maize-yellow);
+		padding: 1.5rem 2rem;
+		margin: 2.5rem 0;
+		border-radius: var(--radius-lg);
+		backdrop-filter: blur(15px);
+		box-shadow: 0 8px 24px rgba(242, 199, 68, 0.2);
+		position: relative;
+		overflow: hidden;
+	}
+	
+	.duahtor-promise::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(135deg, rgba(242, 199, 68, 0.1) 0%, rgba(242, 199, 68, 0.05) 100%);
+		pointer-events: none;
 	}
 
 	.duahtor-promise strong {
 		color: var(--color-pure-white);
 		font-size: 1.125rem;
 		font-weight: 600;
-		text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+		text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+		position: relative;
+		z-index: 1;
 	}
 
 	.social-proof-text {
@@ -2610,6 +2640,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	@media (max-width: 768px) {
 		.hero-split-background {
 			flex-direction: column;
+			top: 4rem; /* Smaller header on mobile */
+			height: calc(100% - 4rem);
 		}
 		.hero-background-half {
 			width: 100%;
@@ -2619,13 +2651,37 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			padding-top: 6rem; /* Smaller top padding for mobile */
 		}
 		.hero-content-center {
-			padding: 0 1rem;
+			padding: 1.5rem 1rem;
+			margin: 0 1rem;
+		}
+		.pain-points-widget {
+			padding: 1.5rem;
+			margin: 2rem 0;
+		}
+		.pain-points-container {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+		.pain-point-card {
+			padding: 1rem;
+		}
+		.pain-icon {
+			font-size: 1.5rem;
+			min-width: 2rem;
+		}
+		.pain-text {
+			font-size: 0.9rem;
 		}
 		.background-label {
 			top: 1rem;
-			left: 1rem;
 			font-size: 0.75rem;
 			padding: 0.375rem 0.75rem;
+		}
+		.before-label {
+			left: 1rem;
+		}
+		.after-label {
+			right: 1rem;
 		}
 
 		.hero-welcome {
@@ -2885,7 +2941,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			// Reset after 3 seconds
 			setTimeout(() => {
 				submitButton.disabled = false;
-				submitButton.textContent = '🔘 Join the Waitlist';
+				submitButton.textContent = 'Join the Waitlist';
 				submitButton.style.background = '';
 				form.reset();
 			}, 3000);
@@ -2910,7 +2966,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				const supporterBtn = document.getElementById('become-supporter-btn');
 				if (supporterBtn) {
 					const methodName = method.querySelector('.payment-name').textContent;
-					supporterBtn.textContent = `🔘 Pay with ${methodName}`;
+					supporterBtn.textContent = `Pay with ${methodName}`;
 				}
 			});
 		});

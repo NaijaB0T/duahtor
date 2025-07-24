@@ -7,18 +7,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
 
 :root {
-  /* Primary Action - Vibrant & Accessible (WCAG AA Revised) */
-  --color-mango-tango: #F57600; /* Contrast with #FFFFFF is 4.54:1 */
-  --color-mango-tango-hover: #D86800; /* Darkened for hover effect, maintains compliance */
-  --color-mango-tango-light: #FFB08A;
+  /* Duahtor Brand Colors - Vibrant Electric Blue */
+  --color-duahtor-blue: #0066FF; /* Primary brand blue - vibrant and electric */
+  --color-duahtor-blue-hover: #0052CC; /* Darker for hover states */
+  --color-duahtor-blue-light: #3385FF; /* Lighter variant */
+  --color-duahtor-blue-dark: #004ACC; /* Darker variant */
 
-  /* Primary Brand - Deep & Intelligent */
-  --color-prussian-blue: #003153; /* Contrast with #FFFFFF is 13.43:1 */
-  --color-prussian-blue-light: #1A4B6B;
-  --color-prussian-blue-dark: #001A2E;
+  /* Legacy mappings for compatibility */
+  --color-mango-tango: #0066FF; /* Now uses brand blue */
+  --color-mango-tango-hover: #0052CC;
+  --color-mango-tango-light: #3385FF;
+  --color-prussian-blue: #0066FF; /* Primary brand blue */  
+  --color-prussian-blue-light: #3385FF;
+  --color-prussian-blue-dark: #004ACC;
 
   /* Accent/Highlight - Bright & Hopeful */
-  --color-maize-yellow: #F2C744; /* Use with dark text like --color-prussian-blue (5.56:1) */
+  --color-maize-yellow: #ffcb30; /* Use with dark text like --color-prussian-blue (5.56:1) */
   --color-maize-yellow-hover: #DAB23C;
   --color-maize-yellow-light: #F8E391;
 
@@ -343,7 +347,7 @@ a:focus-visible {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-mango-tango), var(--color-maize-yellow));
+  background: linear-gradient(135deg, var(--color-duahtor-blue), var(--color-duahtor-blue-light));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
