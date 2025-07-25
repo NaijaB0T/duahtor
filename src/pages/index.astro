@@ -110,6 +110,38 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</div>
 			</section>
 
+			<!-- Pain Points Section (Mobile) -->
+			<section class="pain-points-mobile-section" aria-labelledby="pain-points-title">
+				<div class="container">
+					<div class="section-header">
+						<h2 id="pain-points-title" class="section-title">
+							Common Learning Challenges
+						</h2>
+						<p class="section-subtitle">
+							Issues that many students, parents, and teachers face daily
+						</p>
+					</div>
+					<div class="mobile-pain-points-grid">
+						<div class="mobile-pain-point-card fade-in-up" style="animation-delay: 0.1s">
+							<div class="pain-icon" aria-hidden="true">🗣</div>
+							<span class="pain-text">Struggling with homework?</span>
+						</div>
+						<div class="mobile-pain-point-card fade-in-up" style="animation-delay: 0.2s">
+							<div class="pain-icon" aria-hidden="true">👩</div>
+							<span class="pain-text">Too many students, too few teachers?</span>
+						</div>
+						<div class="mobile-pain-point-card fade-in-up" style="animation-delay: 0.3s">
+							<div class="pain-icon" aria-hidden="true">📚</div>
+							<span class="pain-text">Can't afford tutoring?</span>
+						</div>
+						<div class="mobile-pain-point-card fade-in-up" style="animation-delay: 0.4s">
+							<div class="pain-icon" aria-hidden="true">🌐</div>
+							<span class="pain-text">No reliable internet?</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<!-- Why DUAHTOR Section -->
 			<section class="why-duahtor-section" aria-labelledby="why-duahtor-title">
 				<div class="container">
@@ -1400,6 +1432,42 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		font-size: 2rem;
 		color: var(--color-mango-tango);
 		font-weight: bold;
+	}
+
+	/* Pain Points Mobile Section */
+	.pain-points-mobile-section {
+		padding: 4rem 0;
+		background: var(--color-pure-white);
+		display: none; /* Hidden by default, shown only on mobile */
+	}
+
+	.mobile-pain-points-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5rem;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.mobile-pain-point-card {
+		display: flex;
+		align-items: center;
+		padding: 1.5rem;
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 249, 255, 0.9) 100%);
+		border-radius: var(--radius-lg);
+		border: 1px solid rgba(59, 130, 246, 0.1);
+		backdrop-filter: blur(10px);
+		opacity: 0;
+		transform: translateY(20px);
+		animation: fadeInUp 0.6s ease-out forwards;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+	}
+
+	.mobile-pain-point-card:hover {
+		background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(240, 249, 255, 1) 100%);
+		transform: translateY(-2px);
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 	}
 
 	/* Why DUAHTOR Section */
@@ -2710,17 +2778,34 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			padding: 0 1rem;
 		}
 		
-		/* Mobile side pain points */
+		/* Hide side pain points on mobile */
 		.side-pain-points {
-			width: 220px;
-			gap: 0.75rem;
-			top: 1rem;
+			display: none;
 		}
-		.left-pain-points {
-			left: 1rem;
+		
+		/* Show mobile pain points section */
+		.pain-points-mobile-section {
+			display: block;
 		}
-		.right-pain-points {
-			right: 1rem;
+		
+		.mobile-pain-points-grid {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+			padding: 0 1rem;
+		}
+		
+		.mobile-pain-point-card {
+			padding: 1.25rem;
+		}
+		
+		.mobile-pain-point-card .pain-icon {
+			font-size: 1.5rem;
+			min-width: 2rem;
+			margin-right: 1rem;
+		}
+		
+		.mobile-pain-point-card .pain-text {
+			font-size: 0.95rem;
 		}
 
 		.hero-welcome {
