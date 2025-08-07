@@ -927,7 +927,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 								<div class="form-group">
 									<label for="user-type" class="form-label">Who Are You?</label>
-									<select id="user-type" name="userType" class="form-select" required>
+									<select id="user-type" name="role" class="form-select" required>
 										<option value="">Select your role</option>
 										<option value="student">Student</option>
 										<option value="parent">Parent</option>
@@ -3076,7 +3076,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	}
 
 	// Waitlist form handling
-	function handleWaitlistForm(event) {
+	async function handleWaitlistForm(event) {
 		event.preventDefault();
 		
 		const form = event.target;
@@ -3087,22 +3087,44 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		submitButton.disabled = true;
 		submitButton.textContent = 'Joining...';
 		
-		// In a real implementation, you would send this data to your backend
-		console.log('Waitlist form data:', Object.fromEntries(formData));
-		
-		// Simulate API call
-		setTimeout(() => {
-			submitButton.textContent = '✅ Successfully Joined!';
-			submitButton.style.background = 'var(--color-mango-tango)';
+		try {
+			// Submit to our API endpoint
+			const response = await fetch('/api/waitlist', {
+				method: 'POST',
+				body: formData
+			});
+
+			const result = await response.json();
+
+			if (response.ok && result.success) {
+				// Success state
+				submitButton.textContent = '✅ Successfully Joined!';
+				submitButton.style.background = 'var(--color-mango-tango)';
+				
+				// Reset after 3 seconds
+				setTimeout(() => {
+					submitButton.disabled = false;
+					submitButton.textContent = 'Join the Waitlist';
+					submitButton.style.background = '';
+					form.reset();
+				}, 3000);
+			} else {
+				throw new Error(result.error || 'Failed to join waitlist');
+			}
+		} catch (error) {
+			console.error('Waitlist submission error:', error);
+			
+			// Error state
+			submitButton.textContent = '❌ Error - Try Again';
+			submitButton.style.background = '#EF4444';
 			
 			// Reset after 3 seconds
 			setTimeout(() => {
 				submitButton.disabled = false;
 				submitButton.textContent = 'Join the Waitlist';
 				submitButton.style.background = '';
-				form.reset();
 			}, 3000);
-		}, 1000);
+		}
 	}
 
 	// Payment method selection
