@@ -1,13 +1,9 @@
 import type { APIRoute } from 'astro';
 
-export const GET: APIRoute = async ({ locals, request }) => {
+export const GET: APIRoute = async (context) => {
   try {
-    // Try multiple ways to access D1 database
-    const db = locals?.runtime?.env?.DB || 
-               locals?.DB ||
-               (locals as any)?.runtime?.bindings?.DB ||
-               (request as any).cf?.env?.DB || 
-               (globalThis as any).DB;
+    // Access D1 database in Cloudflare Workers environment
+    const db = context.locals.runtime?.env?.DB;
     
     if (!db) {
       return new Response(JSON.stringify({ 

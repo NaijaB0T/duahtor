@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 
-export const POST: APIRoute = async ({ locals, request }) => {
+export const POST: APIRoute = async (context) => {
+  const { request } = context;
   try {
     const formData = await request.formData();
     
@@ -18,10 +19,8 @@ export const POST: APIRoute = async ({ locals, request }) => {
       });
     }
 
-    // Try multiple ways to access D1 database
-    const db = locals.runtime?.env?.DB || 
-               (request as any).cf?.env?.DB || 
-               (globalThis as any).DB;
+    // Access D1 database in Cloudflare Workers environment
+    const db = context.locals.runtime?.env?.DB;
     if (!db) {
       return new Response(JSON.stringify({ error: 'Database not available' }), {
         status: 500,

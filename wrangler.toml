@@ -1,21 +1,6 @@
 name = "duahtor"
 compatibility_date = "2024-12-01"
-pages_build_output_dir = "dist"
 
-# For Cloudflare Pages
-[env.production]
-[[env.production.d1_databases]]
-binding = "DB"
-database_name = "duahtor-waitlist"
-database_id = "d47e71d8-ef37-470e-b6a3-8c966d45003a"
-
-[env.preview]
-[[env.preview.d1_databases]]
-binding = "DB"
-database_name = "duahtor-waitlist"
-database_id = "d47e71d8-ef37-470e-b6a3-8c966d45003a"
-
-# Default environment
 [[d1_databases]]
 binding = "DB"
 database_name = "duahtor-waitlist"
