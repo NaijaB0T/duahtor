@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ locals, request }) => {
   try {
     const formData = await request.formData();
     
@@ -18,8 +18,10 @@ export const POST: APIRoute = async ({ request }) => {
       });
     }
 
-    // Get D1 database from runtime
-    const db = (request as any).cf?.env?.DB;
+    // Try multiple ways to access D1 database
+    const db = locals.runtime?.env?.DB || 
+               (request as any).cf?.env?.DB || 
+               (globalThis as any).DB;
     if (!db) {
       return new Response(JSON.stringify({ error: 'Database not available' }), {
         status: 500,
