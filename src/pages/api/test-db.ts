@@ -3,24 +3,16 @@ import type { APIRoute } from 'astro';
 export const GET: APIRoute = async ({ locals, request }) => {
   try {
     // Try multiple ways to access D1 database
-    const db = locals.runtime?.env?.DB || 
+    const db = locals?.runtime?.env?.DB || 
+               locals?.DB ||
+               (locals as any)?.runtime?.bindings?.DB ||
                (request as any).cf?.env?.DB || 
                (globalThis as any).DB;
+    
     if (!db) {
-      // Debug info to see what's available
-      const debugInfo = {
-        hasLocals: !!locals,
-        hasRuntime: !!locals?.runtime,
-        hasEnv: !!locals?.runtime?.env,
-        envKeys: locals?.runtime?.env ? Object.keys(locals.runtime.env) : [],
-        hasCf: !!(request as any).cf,
-        cfKeys: (request as any).cf ? Object.keys((request as any).cf) : []
-      };
-      
       return new Response(JSON.stringify({ 
         error: 'Database not available',
-        success: false,
-        debug: debugInfo
+        success: false 
       }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' },
