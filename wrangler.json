@@ -1,14 +1,26 @@
 {
   "name": "duahtor",
+  "account_id": "fc21d701a9caca7c6394deb8dd194dc2",
   "compatibility_date": "2025-04-01",
   "compatibility_flags": ["nodejs_compat"],
   "main": "./dist/_worker.js/index.js",
   "assets": {
     "directory": "./dist",
-    "binding": "ASSETS"
+    "binding": "STATIC_ASSETS"
   },
   "observability": {
     "enabled": true
   },
-  "upload_source_maps": true
+  "upload_source_maps": true,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "duahtor-waitlist",
+      "database_id": "d47e71d8-ef37-470e-b6a3-8c966d45003a"
+    }
+  ],
+  "vars": {
+    "ADMIN_USERNAME": "admin",
+    "ADMIN_PASSWORD": "duahtor-admin-2025"
+  }
 }
