@@ -6,6 +6,8 @@ const cfAccessUser = Astro.request.headers.get('cf-access-authenticated-user-ema
 const isAuthenticated = !!cfAccessUser || import.meta.env.DEV;
 const authenticatedUser = cfAccessUser || 'Development User';
 
+//
+
 // Get waitlist data from D1 database
 let waitlistData = [];
 let foundingSupportersData = [];
