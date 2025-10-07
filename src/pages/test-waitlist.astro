@@ -1,0 +1,212 @@
+---
+// Test page for waitlist functionality
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Waitlist - DUAHTOR</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        h1, h2 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        input, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        button {
+            background: #ff8243;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-right: 1rem;
+        }
+        button:hover {
+            background: #e6743d;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .test-results {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            border: 1px solid #e9ecef;
+            white-space: pre-wrap;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border-color: #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border-color: #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 DUAHTOR Waitlist Testing</h1>
+        
+        <div class="form-group">
+            <button type="button" onclick="testDatabase()">Test Database Connection</button>
+            <div id="db-results" class="test-results" style="display: none;"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Test Waitlist Form</h2>
+        <form id="test-form">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" value="John Doe" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="contact">Email or WhatsApp:</label>
+                <input type="text" id="contact" name="contact" value="john@example.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="role">Role:</label>
+                <select id="role" name="role" required>
+                    <option value="">Select role</option>
+                    <option value="student" selected>Student</option>
+                    <option value="parent">Parent</option>
+                    <option value="educator">Educator</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="county">County:</label>
+                <select id="county" name="county" required>
+                    <option value="">Select county</option>
+                    <option value="montserrado" selected>Montserrado</option>
+                    <option value="margibi">Margibi</option>
+                    <option value="nimba">Nimba</option>
+                    <option value="bong">Bong</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="country">Country (optional):</label>
+                <input type="text" id="country" name="country" value="">
+            </div>
+            
+            <button type="submit">Submit Test Entry</button>
+            <button type="button" onclick="clearResults()">Clear Results</button>
+        </form>
+        
+        <div id="form-results" class="test-results" style="display: none;"></div>
+    </div>
+
+    <script>
+        // Test database connection
+        async function testDatabase() {
+            const resultsDiv = document.getElementById('db-results');
+            resultsDiv.style.display = 'block';
+            resultsDiv.textContent = 'Testing database connection...';
+            resultsDiv.className = 'test-results';
+
+            try {
+                const response = await fetch('/api/test-db');
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    resultsDiv.className = 'test-results success';
+                    resultsDiv.textContent = `✅ Database test successful!\n\nTotal entries: ${result.data.totalEntries}\nTable exists: ${result.data.tableExists}\n\nRecent entries:\n${JSON.stringify(result.data.recentEntries, null, 2)}`;
+                } else {
+                    resultsDiv.className = 'test-results error';
+                    resultsDiv.textContent = `❌ Database test failed:\n${result.error}`;
+                }
+            } catch (error) {
+                resultsDiv.className = 'test-results error';
+                resultsDiv.textContent = `❌ Connection error:\n${error.message}`;
+            }
+        }
+
+        // Test form submission
+        document.getElementById('test-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const resultsDiv = document.getElementById('form-results');
+            const submitBtn = this.querySelector('button[type="submit"]');
+            
+            resultsDiv.style.display = 'block';
+            resultsDiv.textContent = 'Submitting form...';
+            resultsDiv.className = 'test-results';
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            try {
+                const formData = new FormData(this);
+                const response = await fetch('/api/waitlist', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    resultsDiv.className = 'test-results success';
+                    resultsDiv.textContent = '✅ Form submission successful!\n\nData submitted:\n' + 
+                        JSON.stringify(Object.fromEntries(formData), null, 2);
+                } else {
+                    resultsDiv.className = 'test-results error';
+                    resultsDiv.textContent = `❌ Form submission failed:\n${result.error}`;
+                }
+            } catch (error) {
+                resultsDiv.className = 'test-results error';
+                resultsDiv.textContent = `❌ Submission error:\n${error.message}`;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Test Entry';
+            }
+        });
+
+        function clearResults() {
+            document.getElementById('form-results').style.display = 'none';
+            document.getElementById('db-results').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

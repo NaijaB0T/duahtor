@@ -14,5 +14,15 @@ export default defineConfig({
     platformProxy: {
       enabled: true,
     },
+    runtime: {
+      mode: "local",
+      type: "pages",
+      bindings: {
+        DB: {
+          type: "d1",
+          database_id: "d47e71d8-ef37-470e-b6a3-8c966d45003a"
+        }
+      }
+    }
   }),
 });
