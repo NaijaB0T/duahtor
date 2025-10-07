@@ -94,7 +94,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 									<a href="/#features" class="btn btn-secondary btn-hero">
 										Watch Features
 									</a>
-									<a href="/#waitlist" class="btn btn-primary btn-hero">
+									<a href="/#waitlist" class="btn btn-primary btn-hero cta-waitlist-desktop">
 										Join the Early Access Waitlist
 									</a>
 								</div>
@@ -103,6 +103,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 									<p class="social-proof-text">
 										<strong>500+</strong> students already on the waitlist
 									</p>
+								</div>
+								
+								<div class="cta-waitlist-mobile">
+									<a href="/#waitlist" class="btn btn-primary btn-hero">
+										Join the Early Access Waitlist
+									</a>
 								</div>
 							</div>
 						</div>
@@ -914,10 +920,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 								</div>
 
 								<div class="form-group">
-									<label for="contact" class="form-label">Email or WhatsApp</label>
+									<label for="user-contact" class="form-label">Email or WhatsApp</label>
 									<input 
 										type="text" 
-										id="contact" 
+										id="user-contact" 
 										name="contact" 
 										class="form-input" 
 										required 
@@ -1020,17 +1026,31 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 								<h4 class="payment-title">Choose Your Payment Method:</h4>
 								<div class="payment-methods">
 									<button class="payment-method" data-method="mtn">
-										<img src="/momo-mtn.jpg" alt="MTN Money" class="payment-icon-img" />
+										<img src="/momo-mtn.jpg" alt="MTN Money" class="payment-logo">
 										<span class="payment-name">MTN Money</span>
 									</button>
 									<button class="payment-method" data-method="orange">
-										<img src="/orange-money.jpg" alt="Orange Money" class="payment-icon-img" />
+										<img src="/orange-money.jpg" alt="Orange Money" class="payment-logo">
 										<span class="payment-name">Orange Money</span>
 									</button>
 									<button class="payment-method" data-method="card">
 										<span class="payment-icon">💳</span>
 										<span class="payment-name">Card Payment</span>
 									</button>
+								</div>
+							</div>
+							
+							<div class="tshirt-size-section">
+								<h4 class="tshirt-title">Select Your T-Shirt Size:</h4>
+								<div class="tshirt-size-options">
+									<select id="supporter-tshirt-size" name="tshirtSize" class="form-select">
+										<option value="">Select your size</option>
+										<option value="S">Small (S)</option>
+										<option value="M">Medium (M)</option>
+										<option value="L">Large (L)</option>
+										<option value="XL">Extra Large (XL)</option>
+										<option value="XXL">Extra Extra Large (XXL)</option>
+									</select>
 								</div>
 							</div>
 							
@@ -1301,6 +1321,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		font-size: 1.125rem;
 		font-weight: 600;
 		border-radius: var(--radius-lg);
+	}
+
+	.cta-waitlist-mobile {
+		display: none;
 	}
 
 	.duahtor-promise {
@@ -2534,6 +2558,24 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		color: var(--color-charcoal-gray);
 	}
 
+	.tshirt-size-section {
+		margin: 2rem 0;
+		padding-top: 1.5rem;
+		border-top: 1px solid var(--color-border-light);
+	}
+
+	.tshirt-title {
+		font-size: 1.125rem;
+		font-weight: 600;
+		color: var(--color-prussian-blue);
+		margin-bottom: 1rem;
+	}
+
+	.tshirt-size-options select {
+		width: 100%;
+		max-width: 200px;
+	}
+
 	.waitlist-option {
 		margin: 2rem 0;
 	}
@@ -2592,6 +2634,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	.contact-section {
 		padding: 6rem 0;
 		background: var(--color-pure-white);
+		scroll-margin-top: 100px;
 	}
 
 	.contact-content {
@@ -2642,6 +2685,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	.early-access-section {
 		padding: 6rem 0;
 		background: linear-gradient(135deg, var(--color-off-white) 0%, #f0f9ff 100%);
+		scroll-margin-top: 100px;
 	}
 
 	.early-access-form-container {
@@ -2876,6 +2920,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			flex-direction: column;
 		}
 
+		.cta-waitlist-desktop {
+			display: none;
+		}
+
+		.cta-waitlist-mobile {
+			display: block;
+			text-align: center;
+			margin-top: 3rem;
+			margin-bottom: -2rem;
+		}
+
 		.urgency-indicators {
 			flex-direction: column;
 			gap: 1rem;
@@ -3088,16 +3143,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		submitButton.textContent = 'Joining...';
 		
 		try {
-			// Submit to our API endpoint
 			const response = await fetch('/api/waitlist', {
 				method: 'POST',
-				body: formData
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(Object.fromEntries(formData))
 			});
-
+			
 			const result = await response.json();
-
-			if (response.ok && result.success) {
-				// Success state
+			
+			if (response.ok) {
 				submitButton.textContent = '✅ Successfully Joined!';
 				submitButton.style.background = 'var(--color-mango-tango)';
 				
@@ -3112,11 +3168,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				throw new Error(result.error || 'Failed to join waitlist');
 			}
 		} catch (error) {
-			console.error('Waitlist submission error:', error);
-			
-			// Error state
+			console.error('Error joining waitlist:', error);
 			submitButton.textContent = '❌ Error - Try Again';
-			submitButton.style.background = '#EF4444';
+			submitButton.style.background = '#dc2626';
 			
 			// Reset after 3 seconds
 			setTimeout(() => {

@@ -2,7 +2,8 @@ import type { APIRoute } from 'astro';
 
 export const POST: APIRoute = async ({ request, locals }) => {
   try {
-    let fullName: string, contact: string, role: string, county: string, country: string, tshirtSize: string;
+    let fullName: string, contact: string, amountPaid: number, paymentDate: string, 
+        tshirtSize: string, paymentMethod: string, notes: string;
     
     const contentType = request.headers.get('content-type') || '';
     
@@ -10,34 +11,42 @@ export const POST: APIRoute = async ({ request, locals }) => {
       const data = await request.json();
       fullName = data.fullName;
       contact = data.contact;
-      role = data.role;
-      county = data.county;
-      country = data.country;
+      amountPaid = parseFloat(data.amountPaid);
+      paymentDate = data.paymentDate;
       tshirtSize = data.tshirtSize;
+      paymentMethod = data.paymentMethod;
+      notes = data.notes;
     } else {
       const formData = await request.formData();
       fullName = formData.get('fullName') as string;
       contact = formData.get('contact') as string;
-      role = formData.get('role') as string;
-      county = formData.get('county') as string;
-      country = formData.get('country') as string;
+      amountPaid = parseFloat(formData.get('amountPaid') as string);
+      paymentDate = formData.get('paymentDate') as string;
       tshirtSize = formData.get('tshirtSize') as string;
+      paymentMethod = formData.get('paymentMethod') as string;
+      notes = formData.get('notes') as string;
     }
 
     // Validation
-    if (!fullName || !contact || !role || !county) {
+    if (!fullName || !contact || !amountPaid || !paymentDate) {
       return new Response(
-        JSON.stringify({ error: 'Full name, contact, role, and county are required' }),
+        JSON.stringify({ error: 'Full name, contact, amount paid, and payment date are required' }),
         { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
     }
 
-    // Contact validation (email or phone)
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^\+?[\d\s\-\(\)]+$/;
-    if (!emailRegex.test(contact) && !phoneRegex.test(contact)) {
+    // Amount validation
+    if (isNaN(amountPaid) || amountPaid <= 0) {
       return new Response(
-        JSON.stringify({ error: 'Please enter a valid email address or phone number' }),
+        JSON.stringify({ error: 'Please enter a valid amount paid' }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+
+    // Date validation
+    if (!Date.parse(paymentDate)) {
+      return new Response(
+        JSON.stringify({ error: 'Please enter a valid payment date' }),
         { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
     }
@@ -66,15 +75,23 @@ export const POST: APIRoute = async ({ request, locals }) => {
     }
 
     try {
-      // Insert into waitlist table
+      // Insert into founding_supporters table
       await DB.prepare(
-        'INSERT INTO waitlist (full_name, contact, role, county, country, tshirt_size) VALUES (?, ?, ?, ?, ?, ?)'
-      ).bind(fullName, contact, role, county, country || null, tshirtSize || null).run();
+        'INSERT INTO founding_supporters (full_name, contact, amount_paid, payment_date, tshirt_size, payment_method, notes) VALUES (?, ?, ?, ?, ?, ?, ?)'
+      ).bind(
+        fullName, 
+        contact, 
+        amountPaid, 
+        paymentDate, 
+        tshirtSize || null, 
+        paymentMethod || null, 
+        notes || null
+      ).run();
 
       return new Response(
         JSON.stringify({ 
           success: true, 
-          message: 'Successfully joined the waitlist!' 
+          message: 'Founding supporter data recorded successfully!' 
         }),
         { 
           status: 200, 
@@ -83,23 +100,15 @@ export const POST: APIRoute = async ({ request, locals }) => {
       );
 
     } catch (dbError: any) {
-      // Handle duplicate contact error
-      if (dbError.message && dbError.message.includes('UNIQUE constraint failed')) {
-        return new Response(
-          JSON.stringify({ error: 'This contact information is already on the waitlist' }),
-          { status: 409, headers: { 'Content-Type': 'application/json' } }
-        );
-      }
-      
       console.error('Database error:', dbError);
       return new Response(
-        JSON.stringify({ error: 'Failed to save to waitlist' }),
+        JSON.stringify({ error: 'Failed to save founding supporter data' }),
         { status: 500, headers: { 'Content-Type': 'application/json' } }
       );
     }
 
   } catch (error) {
-    console.error('Error processing waitlist submission:', error);
+    console.error('Error processing founding supporter submission:', error);
     return new Response(
       JSON.stringify({ error: 'Internal server error' }),
       { status: 500, headers: { 'Content-Type': 'application/json' } }
