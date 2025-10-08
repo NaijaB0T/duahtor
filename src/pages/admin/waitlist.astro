@@ -60,7 +60,6 @@ const authenticatedUser = ADMIN_USERNAME; // Display the logged-in user
 
 // Get waitlist data from D1 database
 let waitlistData = [];
-let foundingSupportersData = [];
 let error = null;
 
 try {
@@ -70,12 +69,8 @@ try {
     const waitlistResult = await DB.prepare(
       'SELECT * FROM waitlist ORDER BY created_at DESC'
     ).all();
-    const supportersResult = await DB.prepare(
-      'SELECT * FROM founding_supporters ORDER BY payment_date DESC'
-    ).all();
 
     waitlistData = waitlistResult.results || [];
-    foundingSupportersData = supportersResult.results || [];
 
   } else {
     error = 'Database not available';
@@ -396,7 +391,7 @@ const formatCurrency = (amount) => {
   <div class="container">
     <div class="header">
       <h1>🎯 DUAHTOR Admin Dashboard</h1>
-      <p>Waitlist & Founding Supporters Management</p>
+      <p>Waitlist Management</p>
     </div>
     
     <div class="auth-info">
@@ -431,14 +426,6 @@ const formatCurrency = (amount) => {
           <div class="stat-card">
             <div class="stat-number">{waitlistData.filter(item => item.role === 'educator').length}</div>
             <div class="stat-label">Educators</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">{foundingSupportersData.length}</div>
-            <div class="stat-label">Founding Supporters</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">{formatCurrency(foundingSupportersData.reduce((sum, supporter) => sum + parseFloat(supporter.amount_paid || 0), 0))}</div>
-            <div class="stat-label">Total Raised</div>
           </div>
         </div>
         
@@ -496,162 +483,9 @@ const formatCurrency = (amount) => {
               </table>
             </div>
           )}
-
-          <div class="section-header">
-            ⭐ Founding Supporters
-          </div>
-          
-          <button class="toggle-form-btn" onclick="toggleSupporterForm()">
-            ➕ Add New Founding Supporter
-          </button>
-          
-          <div id="supporter-form" class="add-supporter-form hidden">
-            <form id="new-supporter-form">
-              <div class="form-grid">
-                <div class="form-group">
-                  <label for="fullName">Full Name *</label>
-                  <input type="text" id="fullName" name="fullName" required>
-                </div>
-                <div class="form-group">
-                  <label for="contact">Email or Phone *</label>
-                  <input type="text" id="contact" name="contact" required>
-                </div>
-                <div class="form-group">
-                  <label for="amountPaid">Amount Paid ($) *</label>
-                  <input type="number" id="amountPaid" name="amountPaid" step="0.01" min="0" required>
-                </div>
-                <div class="form-group">
-                  <label for="paymentDate">Payment Date *</label>
-                  <input type="date" id="paymentDate" name="paymentDate" required>
-                </div>
-                <div class="form-group">
-                  <label for="tshirtSize">T-Shirt Size</label>
-                  <select id="tshirtSize" name="tshirtSize">
-                    <option value="">Select Size</option>
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="paymentMethod">Payment Method</label>
-                  <select id="paymentMethod" name="paymentMethod">
-                    <option value="">Select Method</option>
-                    <option value="Credit Card">Credit Card</option>
-                    <option value="Bank Transfer">Bank Transfer</option>
-                    <option value="PayPal">PayPal</option>
-                    <option value="Mobile Money">Mobile Money</option>
-                    <option value="Cash">Cash</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="notes">Additional Notes</label>
-                <textarea id="notes" name="notes" rows="3" placeholder="Any additional information..."></textarea>
-              </div>
-              <div class="form-actions">
-                <button type="submit" class="btn-primary">💾 Save Supporter</button>
-                <button type="button" class="btn-secondary" onclick="toggleSupporterForm()">Cancel</button>
-              </div>
-            </form>
-          </div>
-          
-          {foundingSupportersData.length === 0 ? (
-            <div class="no-data">
-              <h3>No founding supporters yet</h3>
-              <p>Founding supporter data will appear here once payments are recorded.</p>
-            </div>
-          ) : (
-            <div class="table-container section-content">
-              <table>
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Full Name</th>
-                    <th>Contact</th>
-                    <th>Amount Paid</th>
-                    <th>Payment Date</th>
-                    <th>T-Shirt Size</th>
-                    <th>Payment Method</th>
-                    <th>Notes</th>
-                    <th>Recorded</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {foundingSupportersData.map((supporter) => (
-                    <tr key={supporter.id}>
-                      <td>#{supporter.id}</td>
-                      <td><strong>{supporter.full_name}</strong></td>
-                      <td class="contact">{supporter.contact}</td>
-                      <td class="amount-highlight">{formatCurrency(supporter.amount_paid)}</td>
-                      <td>{formatDateOnly(supporter.payment_date)}</td>
-                      <td>
-                        {supporter.tshirt_size ? (
-                          <span class="tshirt-badge">{supporter.tshirt_size}</span>
-                        ) : '-'}
-                      </td>
-                      <td>{supporter.payment_method || '-'}</td>
-                      <td>{supporter.notes || '-'}</td>
-                      <td>{formatDate(supporter.created_at)}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
         </div>
       </>
     )}
   </div>
-
-  <script>
-    function toggleSupporterForm() {
-      const form = document.getElementById('supporter-form');
-      const button = document.querySelector('.toggle-form-btn');
-      
-      if (form.classList.contains('hidden')) {
-        form.classList.remove('hidden');
-        button.textContent = '❌ Cancel Add Supporter';
-      } else {
-        form.classList.add('hidden');
-        button.textContent = '➕ Add New Founding Supporter';
-        document.getElementById('new-supporter-form').reset();
-      }
-    }
-
-    document.getElementById('new-supporter-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const formData = new FormData(e.target);
-      const data = Object.fromEntries(formData.entries());
-      
-      try {
-        const response = await fetch('/api/founding-supporters', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-
-        const result = await response.json();
-        
-        if (response.ok) {
-          alert('✅ ' + result.message);
-          window.location.reload();
-        } else {
-          alert('❌ Error: ' + result.error);
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        alert('❌ An error occurred while saving the supporter data. Please try again.');
-      }
-    });
-  </script>
-
 </body>
 </html>
